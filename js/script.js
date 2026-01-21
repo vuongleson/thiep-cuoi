@@ -1,21 +1,19 @@
 const music = document.getElementById("bgMusic");
 const musicToggle = document.getElementById("musicToggle");
 
-let musicStarted = false;
+let started = false;
 
-// CLICK NÚT 🔊 LÀ BẬT NHẠC (100% ĐƯỢC PHÉP)
-musicToggle.addEventListener("click", (e) => {
-  e.stopPropagation();
-
-  if (!musicStarted) {
+musicToggle.addEventListener("click", () => {
+  if (!started) {
     music
       .play()
       .then(() => {
-        musicStarted = true;
+        started = true;
         musicToggle.textContent = "🔊";
       })
       .catch((err) => {
-        console.log("Audio blocked:", err);
+        alert("Trình duyệt đang chặn nhạc. Vui lòng thử lại.");
+        console.error(err);
       });
   } else {
     if (music.paused) {
