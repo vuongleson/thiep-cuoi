@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: #f6f1e8;
+  color: #4a3b2a;
+}
+
+/* HEADER */
+.site-header {
+  position: sticky;
+  top: 0;
+  background: #f6f1e8;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 14px 20px;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  gap: 26px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #5a4a3b;
+}
+
+/* HERO – HIỆN ĐỦ ẢNH */
+.hero-image {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f6f1e8;
+  overflow: hidden;
+}
+
+.hero-img {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  max-width: 100%;
+  max-height: 100svh;
+  object-fit: contain;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25));
+  z-index: 2;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  transform: translateY(-8vh);
+}
+
+.hero-title,
+.hero-sub,
+.hero-names,
+.hero-date {
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+.hero-title {
+  font-family: "Playfair Display", serif;
+  font-size: 56px;
+}
+
+.hero-sub {
+  margin: 10px 0 20px;
+  font-size: 15px;
+}
+.hero-names {
+  font-family: "Playfair Display", serif;
+  font-size: 40px;
+}
+.hero-date {
+  margin-top: 10px;
+  letter-spacing: 2px;
+}
+
+/* SECTIONS */
+.section {
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.section.alt {
+  background: #fff;
+}
+
+.section h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.section-text {
+  margin-bottom: 15px;
+}
+
+/* GALLERY */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* RSVP */
+.rsvp-form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input,
+select,
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+textarea {
+  resize: none;
+  height: 80px;
+}
+
+button {
+  background: #5a4a3b;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+}
+
+/* LOCATION – 2 BÊN CÂN ĐỀU */
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.location-box h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.location-box p {
+  margin-bottom: 12px;
+}
+
+.location-box iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+}
+
+/* MUSIC */
+#musicToggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #5a4a3b;
+  color: #fff;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero-text {
+    transform: translateY(-12vh);
+  }
+  .hero-title {
+    font-size: 34px;
+  }
+  .hero-names {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+  .hero-sub,
+  .hero-date {
+    font-size: 13px;
+  }
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  .location-grid {
+    grid-template-columns: 1fr;
+  }
+  iframe {
+    height: 240px;
+  }
+}
