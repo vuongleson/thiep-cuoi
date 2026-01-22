@@ -186,7 +186,7 @@ button {
   border: 0;
 }
 
-/* MUSIC */
+/* MUSIC (CŨ – GIỮ NGUYÊN) */
 #musicToggle {
   position: fixed;
   bottom: 20px;
@@ -198,6 +198,119 @@ button {
   height: 44px;
   border-radius: 50%;
   cursor: pointer;
+}
+
+/* =====================================================
+   ADD TODAY – INTRO SCREEN (NGÀY HÔM NAY THÊM)
+   ===================================================== */
+#intro {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background:
+    linear-gradient(rgba(120, 0, 0, 0.75), rgba(120, 0, 0, 0.75)),
+    url("../assets/images/intro-bg.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-box {
+  text-align: center;
+  color: #fff;
+  padding: 30px;
+}
+
+.intro-box span {
+  color: gold;
+}
+
+#enterWedding {
+  margin-top: 20px;
+  padding: 14px 36px;
+  border-radius: 40px;
+  border: none;
+  background: gold;
+  color: #800000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#intro.hide {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
+}
+
+/* =====================================================
+   ADD TODAY – CONTACT FLOAT (ZALO / MESSENGER)
+   ===================================================== */
+#contactWrap {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  z-index: 9998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+#contactWrap.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#contactMain {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #800000;
+  color: gold;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.contact-menu {
+  position: absolute;
+  bottom: 64px;
+  right: 0;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+#contactWrap.open .contact-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.contact-item {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.contact-item img {
+  width: 26px;
+  height: 26px;
+}
+
+.contact-item.zalo {
+  background: #0068ff;
+}
+
+.contact-item.messenger {
+  background: linear-gradient(45deg, #0084ff, #00c6ff);
 }
 
 /* MOBILE */
