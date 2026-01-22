@@ -5,13 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Save the Date | Hoài Thương & Sơn</title>
 
+    <!-- CSS (GIỮ NGUYÊN FILE CŨ) -->
     <link rel="stylesheet" href="css/style.css" />
+
+    <!-- FONT (GIỮ NGUYÊN) -->
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Montserrat:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
   </head>
+
   <body>
+    <!-- =====================================================
+         ADD TODAY – INTRO SCREEN (MÀN HÌNH MỞ THIỆP)
+         ===================================================== -->
+    <div id="intro">
+      <div class="intro-box">
+        <p>TRÂN TRỌNG KÍNH MỜI</p>
+        <h2>
+          Nguyễn Thị Hoài Thương <span>&</span><br />
+          Vương Lê Sơn
+        </h2>
+        <button id="enterWedding">MỞ THIỆP CƯỚI</button>
+      </div>
+    </div>
+    <!-- ===== END ADD TODAY – INTRO ===== -->
+
+    <!-- =====================================================
+         HEADER (GIỮ NGUYÊN – FILE HÔM QUA)
+         ===================================================== -->
     <header class="site-header">
       <div class="nav-container">
         <nav class="nav-menu">
@@ -25,11 +47,16 @@
       </div>
     </header>
 
+    <!-- =====================================================
+         MUSIC (GIỮ NGUYÊN – FILE HÔM QUA)
+         ===================================================== -->
     <audio id="bgMusic" loop playsinline>
       <source src="assets/music/Like My Father.mp3" type="audio/mpeg" />
     </audio>
 
-    <!-- HERO -->
+    <!-- =====================================================
+         HERO (GIỮ NGUYÊN)
+         ===================================================== -->
     <section id="home" class="hero hero-image">
       <img src="assets/images/hero.jpg" alt="Save the Date" class="hero-img" />
       <div class="hero-overlay"></div>
@@ -44,7 +71,9 @@
       </div>
     </section>
 
-    <!-- THIỆP MỜI -->
+    <!-- =====================================================
+         THIỆP MỜI (GIỮ NGUYÊN)
+         ===================================================== -->
     <section id="invitation" class="section">
       <h2>Thiệp Mời</h2>
       <p class="section-text">
@@ -57,7 +86,9 @@
       </p>
     </section>
 
-    <!-- CHUYỆN CHÚNG TÔI -->
+    <!-- =====================================================
+         CHUYỆN CHÚNG TÔI (GIỮ NGUYÊN)
+         ===================================================== -->
     <section id="story" class="section alt">
       <h2>Chuyện Chúng Tôi</h2>
       <p class="section-text">
@@ -70,7 +101,9 @@
       </p>
     </section>
 
-    <!-- ALBUM -->
+    <!-- =====================================================
+         ALBUM (GIỮ NGUYÊN)
+         ===================================================== -->
     <section id="gallery" class="section">
       <h2>Album Ảnh</h2>
       <div class="gallery-grid">
@@ -81,7 +114,9 @@
       </div>
     </section>
 
-    <!-- RSVP -->
+    <!-- =====================================================
+         RSVP (GIỮ NGUYÊN)
+         ===================================================== -->
     <section id="rsvp" class="section alt">
       <h2>Xác Nhận Tham Dự</h2>
       <p class="section-text">
@@ -91,7 +126,6 @@
 
       <form id="rsvpForm" class="rsvp-form">
         <input id="name" placeholder="Họ và tên" required />
-
         <select id="attend" required>
           <option value="">Bạn sẽ tham dự?</option>
           <option value="Có">Có, tôi sẽ đến</option>
@@ -111,14 +145,15 @@
           placeholder="Số người tham dự"
         />
         <textarea id="note" placeholder="Ghi chú (nếu có)"></textarea>
-
         <button type="submit">Gửi xác nhận</button>
       </form>
 
       <p id="rsvpMessage"></p>
     </section>
 
-    <!-- ĐỊA ĐIỂM (CÂN ĐỀU 2 BÊN) -->
+    <!-- =====================================================
+         LOCATION (GIỮ NGUYÊN – GOOGLE MAP)
+         ===================================================== -->
     <section id="location" class="section">
       <h2>Địa Điểm Tổ Chức</h2>
 
@@ -141,8 +176,38 @@
       </div>
     </section>
 
+    <!-- =====================================================
+         ADD TODAY – CONTACT FLOAT (ZALO / MESSENGER)
+         ===================================================== -->
+    <div id="contactWrap">
+      <div id="contactMain">💬</div>
+
+      <div class="contact-menu">
+        <a
+          href="https://zalo.me/0901234567"
+          target="_blank"
+          class="contact-item zalo"
+        >
+          <img src="assets/images/zalo.png" alt="Zalo" />
+        </a>
+
+        <a
+          href="https://m.me/your.facebook.id"
+          target="_blank"
+          class="contact-item messenger"
+        >
+          <img src="assets/images/messenger.png" alt="Messenger" />
+        </a>
+      </div>
+    </div>
+    <!-- ===== END ADD TODAY – CONTACT ===== -->
+
+    <!-- =====================================================
+         MUSIC TOGGLE (GIỮ NGUYÊN – FILE HÔM QUA)
+         ===================================================== -->
     <button id="musicToggle">🔊</button>
 
+    <!-- JS (GIỮ NGUYÊN FILE CŨ + ĐÃ ADD LOGIC) -->
     <script src="js/script.js"></script>
   </body>
 </html>
