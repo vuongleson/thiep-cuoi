@@ -119,16 +119,17 @@ body {
    DESKTOP / LAPTOP – HERO FULL + TEXT OVERLAY
    ===================================================== */
 @media (min-width: 1024px) {
-  .hero {
-    position: relative;
-    padding: 0;
-    height: 85vh;
-    max-height: 720px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+
+  .hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;     /* ✅ GIỮ TRỌN ẢNH */
+    background: #f00707;        /* nền đen cho phần dư */
   }
+}
+
 
   .hero-img {
     position: absolute;
