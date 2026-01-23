@@ -118,51 +118,62 @@ body {
 /* =====================================================
    DESKTOP / LAPTOP – HERO FULL + TEXT OVERLAY
    ===================================================== */
+/* =====================================================
+   HERO DESKTOP – SHOW FULL IMAGE (NO CROP)
+   ===================================================== */
+
 @media (min-width: 1024px) {
-
-  .hero-img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;     /* ✅ GIỮ TRỌN ẢNH */
-    background: #f00707;        /* nền đen cho phần dư */
-  }
-}
-
-
-  .hero-img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
+  /* KHUNG HERO KHÔNG ÉP CHIỀU CAO */
+  .hero {
+    position: relative;
+    padding: 0;
+    height: auto; /* 🔥 KHÔNG ÉP */
     max-height: none;
-    object-fit: cover;
-    border-radius: 0;
-    z-index: 1;
+    overflow: hidden;
+    background: #000; /* nền cho phần dư */
   }
 
-  /* Overlay tối để chữ dễ đọc */
+  /* ẢNH HIỂN THỊ TRỌN VẸN */
+  .hero-img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto; /* 🔥 theo tỷ lệ ảnh */
+    max-width: 100%;
+    object-fit: contain; /* 🔥 KHÔNG CẮT */
+    margin: 0 auto;
+    border-radius: 0;
+    background: #000;
+  }
+
+  /* OVERLAY NHẸ */
   .hero::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-    z-index: 2;
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35));
+    z-index: 1;
+    pointer-events: none;
   }
 
+  /* CHỮ ĐÈ LÊN ẢNH */
   .hero-text {
-    position: relative;
-    z-index: 3;
-    margin: 0;
-    color: #fff;
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    color: #fff;
+    margin: 0;
     text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    padding: 0 24px;
   }
 
   .hero-title {
-    font-size: 56px;
-    letter-spacing: 1px;
+    font-size: 54px;
   }
 
   .hero-names {
