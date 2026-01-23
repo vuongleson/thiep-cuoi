@@ -339,3 +339,113 @@ button {
     height: 240px;
   }
 }
+/* =====================================================
+   MOBILE OPTIMIZATION – ADD TODAY
+   ===================================================== */
+@media (max-width: 768px) {
+
+  /* ===== INTRO ===== */
+  #intro {
+    padding: env(safe-area-inset-top)
+             env(safe-area-inset-right)
+             env(safe-area-inset-bottom)
+             env(safe-area-inset-left);
+  }
+
+  .intro-box {
+    padding: 20px;
+  }
+
+  .intro-box h2 {
+    font-size: 22px;
+    line-height: 1.4;
+  }
+
+  #enterWedding {
+    width: 100%;
+    max-width: 260px;
+    font-size: 15px;
+    padding: 12px 0;
+  }
+
+  /* ===== HERO ===== */
+  .hero-image {
+    min-height: 100vh;
+  }
+
+  .hero-img {
+    object-fit: cover; /* mobile full màn hình */
+  }
+
+  .hero-text {
+    transform: translateY(-10vh);
+    padding: 0 14px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .hero-names {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+
+  .hero-sub,
+  .hero-date {
+    font-size: 13px;
+  }
+
+  /* ===== SECTION ===== */
+  .section {
+    padding: 60px 16px;
+  }
+
+  /* ===== GALLERY ===== */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ===== LOCATION (MAP) ===== */
+  .location-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .location-box iframe {
+    height: 240px;
+    border-radius: 10px;
+  }
+
+  /* ===== MUSIC TOGGLE ===== */
+  #musicToggle {
+    bottom: 16px;
+    left: 16px;
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+  }
+
+  /* ===== CONTACT FLOAT ===== */
+  #contactWrap {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  #contactMain {
+    width: 48px;
+    height: 48px;
+    font-size: 22px;
+  }
+
+  .contact-item {
+    width: 44px;
+    height: 44px;
+  }
+
+  .contact-item img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
