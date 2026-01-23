@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Save the Date | Hoài Thương & Sơn</title>
+  <title>Thiệp Cưới | Hoài Thương & Sơn</title>
 
   <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Montserrat:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  />
 </head>
 
 <body>
@@ -15,16 +17,16 @@
 <!-- INTRO -->
 <div id="intro">
   <div class="intro-box">
-    <p class="intro-small">TRÂN TRỌNG KÍNH MỜI</p>
-    <h2 class="intro-names">
-      Nguyễn Thị Hoài Thương <span>&</span><br>
+    <p>TRÂN TRỌNG KÍNH MỜI</p>
+    <h2>
+      Nguyễn Thị Hoài Thương <span>&</span><br />
       Vương Lê Sơn
     </h2>
     <button id="enterWedding">MỞ THIỆP CƯỚI</button>
   </div>
 </div>
 
-<!-- HEADER (KHÔNG STICKY TRÊN MOBILE) -->
+<!-- HEADER -->
 <header class="site-header">
   <nav class="nav-menu">
     <a href="#home">Trang chủ</a>
@@ -37,37 +39,57 @@
 </header>
 
 <!-- MUSIC -->
-<audio id="bgMusic" loop playsinline preload="auto">
-  <source src="assets/music/Like My Father.mp3" type="audio/mpeg">
+<audio id="bgMusic" loop playsinline>
+  <source src="assets/music/Like My Father.mp3" type="audio/mpeg" />
 </audio>
 
 <!-- HERO -->
 <section id="home" class="hero">
-  <img src="assets/images/hero.jpg" class="hero-img">
-  <div class="hero-overlay"></div>
+  <img src="assets/images/hero.jpg" alt="Save the Date" class="hero-img" />
+
   <div class="hero-text">
-    <h1>Save the Date</h1>
+    <h1 class="hero-title">Save the Date</h1>
     <p>Ngày chúng tôi về chung một nhà</p>
-    <h2>Hoài Thương <span>&</span> Sơn</h2>
-    <p class="date">14 · 02 · 2026</p>
+    <h2 class="hero-names">Hoài Thương <span>&</span> Sơn</h2>
+    <p class="hero-date">14 · 02 · 2026</p>
   </div>
 </section>
 
 <!-- THIỆP MỜI -->
 <section id="invitation" class="section">
   <h2>Thiệp Mời</h2>
-  <p>
-    Trân trọng kính mời Quý khách đến dự lễ thành hôn của chúng tôi.<br>
+  <p class="section-text">
+    Trân trọng kính mời Quý khách đến dự lễ thành hôn của chúng tôi.<br />
     Sự hiện diện của Quý khách là niềm vinh hạnh cho gia đình hai bên.
   </p>
+
+  <div class="invitation-sides">
+    <div class="invitation-box">
+      <h3>💐 Lễ cưới tại nhà gái</h3>
+      <p>
+        <strong>Nguyễn Thị Hoài Thương</strong><br />
+        📍 Quảng Bình<br />
+        🕘 (Giờ tổ chức)
+      </p>
+    </div>
+
+    <div class="invitation-box">
+      <h3>💍 Lễ cưới tại nhà trai</h3>
+      <p>
+        <strong>Vương Lê Sơn</strong><br />
+        📍 Bình Định<br />
+        🕘 (Giờ tổ chức)
+      </p>
+    </div>
+  </div>
 </section>
 
 <!-- STORY -->
 <section id="story" class="section alt">
   <h2>Chuyện Chúng Tôi</h2>
   <p>
-    Sau những năm tháng đồng hành, chúng tôi quyết định về chung một nhà
-    và bắt đầu hành trình mới.
+    Từ những ngày đầu gặp gỡ đến khi quyết định về chung một nhà,
+    chúng tôi đã cùng nhau trải qua nhiều khoảnh khắc đáng nhớ.
   </p>
 </section>
 
@@ -75,10 +97,10 @@
 <section id="gallery" class="section">
   <h2>Album Ảnh</h2>
   <div class="gallery">
-    <img src="assets/images/gallery/1.jpg">
-    <img src="assets/images/gallery/2.jpg">
-    <img src="assets/images/gallery/3.jpg">
-    <img src="assets/images/gallery/4.jpg">
+    <img src="assets/images/gallery/1.jpg" />
+    <img src="assets/images/gallery/2.jpg" />
+    <img src="assets/images/gallery/3.jpg" />
+    <img src="assets/images/gallery/4.jpg" />
   </div>
 </section>
 
@@ -86,7 +108,7 @@
 <section id="rsvp" class="section alt">
   <h2>Xác Nhận Tham Dự</h2>
   <form class="rsvp-form">
-    <input placeholder="Họ và tên">
+    <input placeholder="Họ và tên" />
     <select>
       <option>Bạn sẽ tham dự?</option>
       <option>Có</option>
@@ -96,28 +118,33 @@
   </form>
 </section>
 
-<!-- GOOGLE MAPS (GIỮ) -->
+<!-- ĐỊA ĐIỂM -->
 <section id="location" class="section">
-  <h2>Địa Điểm</h2>
+  <h2>Địa Điểm Tổ Chức</h2>
 
-  <iframe
-    src="https://www.google.com/maps?q=Khách+sạn+Hải+Âu+Quy+Nhơn&output=embed"
-    loading="lazy">
-  </iframe>
-</section>
+  <div class="location-grid">
+    <div class="location-box">
+      <h3>Nhà gái – Quảng Bình</h3>
+      <p><strong>Trường THCS Hiền Ninh</strong></p>
+      <iframe
+        src="https://www.google.com/maps?q=Trường+THCS+Hiền+Ninh+Quảng+Bình&output=embed"
+        loading="lazy">
+      </iframe>
+    </div>
 
-<!-- CONTACT -->
-<div id="contactWrap">
-  <div id="contactMain">💬</div>
-  <div class="contact-menu">
-    <a href="https://zalo.me/0901234567"><img src="assets/images/zalo.png"></a>
-    <a href="https://m.me/your.facebook.id"><img src="assets/images/messenger.png"></a>
+    <div class="location-box">
+      <h3>Nhà trai – Bình Định</h3>
+      <p><strong>Khách sạn Hải Âu – Quy Nhơn</strong></p>
+      <iframe
+        src="https://www.google.com/maps?q=Khách+sạn+Hải+Âu+Quy+Nhơn&output=embed"
+        loading="lazy">
+      </iframe>
+    </div>
   </div>
-</div>
+</section>
 
 <button id="musicToggle">🔊</button>
 
 <script src="js/script.js"></script>
 </body>
 </html>
-
