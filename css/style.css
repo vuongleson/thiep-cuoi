@@ -264,6 +264,87 @@ iframe {
   background: #fff;
   padding: 6px;
 }
+/* =====================================================
+   REVERT TO CLEAN & COMPACT LAYOUT (FINAL)
+   ===================================================== */
+
+/* ===== KHUNG CHUNG (QUAN TRỌNG) ===== */
+.section,
+.hero-text,
+.gallery,
+.gallery-grid {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ===== HERO – THU GỌN LẠI ===== */
+.hero {
+  height: auto;
+  min-height: unset;
+  padding: 40px 0;
+  background: #000;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-img {
+    position: relative;
+    width: 100%;
+    max-height: 70vh;     /* QUAN TRỌNG */
+    object-fit: cover;   /* quay về kiểu cũ */
+    border-radius: 12px;
+  }
+
+  .hero-text {
+    position: static;
+    margin-top: 20px;
+    padding: 0 16px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 769px) {
+  .hero {
+    padding: 80px 0;
+  }
+
+  .hero-img {
+    max-height: 520px;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+
+  .hero-text {
+    margin-top: 24px;
+  }
+}
+
+/* ===== GALLERY – GỌN NHƯ ALBUM ===== */
+.gallery,
+.gallery-grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.gallery img,
+.gallery-grid img {
+  width: 100%;
+  height: 220px;        /* quay về kiểu cũ */
+  object-fit: cover;
+  border-radius: 12px;
+  background: none;
+  box-shadow: none;
+}
+
+/* Mobile gallery 1 cột */
+@media (max-width: 768px) {
+  .gallery,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 
 
