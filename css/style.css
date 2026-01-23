@@ -224,5 +224,46 @@ iframe {
     padding-right: calc(16px + env(safe-area-inset-right));
   }
 }
+/* =====================================================
+   FINAL POLISH – MOBILE FIRST
+   ===================================================== */
+
+/* ===== HERO CÂN ĐỐI LẠI ===== */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-img {
+    max-height: 80vh;   /* QUAN TRỌNG */
+    margin-top: 6vh;
+  }
+
+  .hero-text {
+    bottom: auto;
+    top: 12%;
+    padding: 0 20px;
+  }
+}
+
+/* ===== HERO DESKTOP GIỮ ĐẸP ===== */
+@media (min-width: 769px) {
+  .hero-text {
+    bottom: 18%;
+  }
+}
+
+/* ===== GALLERY ĐẸP NHƯ ALBUM ===== */
+.gallery img,
+.gallery-grid img {
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  background: #fff;
+  padding: 6px;
+}
+
 
 
