@@ -1,213 +1,168 @@
 <!doctype html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Save the Date | Hoài Thương & Sơn</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- CSS (GIỮ NGUYÊN FILE CŨ) -->
-    <link rel="stylesheet" href="css/style.css" />
+  <title>Save the Date | Hoài Thương & Sơn</title>
 
-    <!-- FONT (GIỮ NGUYÊN) -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Montserrat:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Montserrat:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  />
+</head>
 
-  <body>
-    <!-- =====================================================
-         ADD TODAY – INTRO SCREEN (MÀN HÌNH MỞ THIỆP)
-         ===================================================== -->
-    <div id="intro">
-      <div class="intro-box">
-        <p>TRÂN TRỌNG KÍNH MỜI</p>
-        <h2>
-          Nguyễn Thị Hoài Thương <span>&</span><br />
-          Vương Lê Sơn
-        </h2>
-        <button id="enterWedding">MỞ THIỆP CƯỚI</button>
-      </div>
+<body>
+
+<!-- ================= INTRO ================= -->
+<div id="intro">
+  <div class="intro-box">
+    <p>TRÂN TRỌNG KÍNH MỜI</p>
+    <h2>
+      Nguyễn Thị Hoài Thương <span>&</span><br />
+      Vương Lê Sơn
+    </h2>
+    <button id="enterWedding">MỞ THIỆP CƯỚI</button>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="nav-container">
+    <nav class="nav-menu">
+      <a href="#home">Trang chủ</a>
+      <a href="#invitation">Thiệp mời</a>
+      <a href="#story">Chuyện chúng tôi</a>
+      <a href="#gallery">Album ảnh</a>
+      <a href="#rsvp">Xác nhận tham dự</a>
+      <a href="#location">Địa điểm</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= MUSIC ================= -->
+<audio id="bgMusic" loop playsinline preload="auto">
+  <source src="assets/music/Like My Father.mp3" type="audio/mpeg" />
+</audio>
+
+<!-- ================= HERO ================= -->
+<section id="home" class="hero hero-image">
+  <img src="assets/images/hero.jpg" class="hero-img" />
+  <div class="hero-overlay"></div>
+  <div class="hero-text">
+    <h1 class="hero-title">Save the Date</h1>
+    <p class="hero-sub">Ngày chúng tôi về chung một nhà</p>
+    <h2 class="hero-names">
+      Nguyễn Thị Hoài Thương <span>&</span> Vương Lê Sơn
+    </h2>
+    <p class="hero-date">14 · 02 · 2026</p>
+  </div>
+</section>
+
+<!-- ================= THIỆP MỜI ================= -->
+<section id="invitation" class="section">
+  <h2>Thiệp Mời</h2>
+  <p class="section-text">
+    Trân trọng kính mời Quý khách đến dự lễ thành hôn của chúng tôi.<br />
+    Sự hiện diện của Quý khách là niềm vinh hạnh cho gia đình hai bên.
+  </p>
+  <p class="section-info">
+    📅 <strong>Ngày 14 tháng 02 năm 2026</strong><br />
+    📍 <strong>Khách sạn Hải Âu – Quy Nhơn</strong>
+  </p>
+</section>
+
+<!-- ================= CHUYỆN CHÚNG TÔI ================= -->
+<section id="story" class="section alt">
+  <h2>Chuyện Chúng Tôi</h2>
+  <p class="section-text">
+    Từ những ngày đầu gặp gỡ, chúng tôi đã cùng nhau chia sẻ những khoảnh
+    khắc giản dị nhưng đầy yêu thương.
+  </p>
+  <p class="section-text">
+    Sau hành trình ấy, chúng tôi quyết định về chung một nhà và bắt đầu
+    chương mới của cuộc đời.
+  </p>
+</section>
+
+<!-- ================= ALBUM ================= -->
+<section id="gallery" class="section">
+  <h2>Album Ảnh</h2>
+  <div class="gallery-grid">
+    <img src="assets/images/gallery/1.jpg" />
+    <img src="assets/images/gallery/2.jpg" />
+    <img src="assets/images/gallery/3.jpg" />
+    <img src="assets/images/gallery/4.jpg" />
+  </div>
+</section>
+
+<!-- ================= RSVP ================= -->
+<section id="rsvp" class="section alt">
+  <h2>Xác Nhận Tham Dự</h2>
+  <p class="section-text">
+    Vui lòng xác nhận sự tham dự của bạn để buổi tiệc được chuẩn bị chu đáo hơn.
+  </p>
+
+  <form id="rsvpForm" class="rsvp-form">
+    <input id="name" placeholder="Họ và tên" required />
+    <select id="attend" required>
+      <option value="">Bạn sẽ tham dự?</option>
+      <option value="Có">Có, tôi sẽ đến</option>
+      <option value="Không">Xin lỗi, tôi không tham dự được</option>
+    </select>
+
+    <select id="side" required>
+      <option value="">Bạn tham dự tại đâu?</option>
+      <option value="Nhà gái - Quảng Bình">Nhà gái – Quảng Bình</option>
+      <option value="Nhà trai - Bình Định">Nhà trai – Bình Định</option>
+    </select>
+
+    <input id="guests" type="number" min="1" placeholder="Số người tham dự" />
+    <textarea id="note" placeholder="Ghi chú (nếu có)"></textarea>
+    <button type="submit">Gửi xác nhận</button>
+  </form>
+
+  <p id="rsvpMessage"></p>
+</section>
+
+<!-- ================= LOCATION – GOOGLE MAPS (GIỮ NGUYÊN) ================= -->
+<section id="location" class="section">
+  <h2>Địa Điểm Tổ Chức</h2>
+
+  <div class="location-grid">
+    <div class="location-box">
+      <h3>Nhà gái – Quảng Bình</h3>
+      <p><strong>Trường THCS Hiền Ninh, Quảng Bình</strong></p>
+      <iframe
+        src="https://www.google.com/maps?q=Trường+THCS+Hiền+Ninh+Quảng+Bình&output=embed">
+      </iframe>
     </div>
-    <!-- ===== END ADD TODAY – INTRO ===== -->
 
-    <!-- =====================================================
-         HEADER (GIỮ NGUYÊN – FILE HÔM QUA)
-         ===================================================== -->
-    <header class="site-header">
-      <div class="nav-container">
-        <nav class="nav-menu">
-          <a href="#home">Trang chủ</a>
-          <a href="#invitation">Thiệp mời</a>
-          <a href="#story">Chuyện chúng tôi</a>
-          <a href="#gallery">Album ảnh</a>
-          <a href="#rsvp">Xác nhận tham dự</a>
-          <a href="#location">Địa điểm</a>
-        </nav>
-      </div>
-    </header>
-
-    <!-- =====================================================
-         MUSIC (GIỮ NGUYÊN – FILE HÔM QUA)
-         ===================================================== -->
-    <audio id="bgMusic" loop playsinline>
-      <source src="assets/music/Like My Father.mp3" type="audio/mpeg" />
-    </audio>
-
-    <!-- =====================================================
-         HERO (GIỮ NGUYÊN)
-         ===================================================== -->
-    <section id="home" class="hero hero-image">
-      <img src="assets/images/hero.jpg" alt="Save the Date" class="hero-img" />
-      <div class="hero-overlay"></div>
-
-      <div class="hero-text">
-        <h1 class="hero-title">Save the Date</h1>
-        <p class="hero-sub">Ngày chúng tôi về chung một nhà</p>
-        <h2 class="hero-names">
-          Nguyễn Thị Hoài Thương <span>&</span> Vương Lê Sơn
-        </h2>
-        <p class="hero-date">14 · 02 · 2026</p>
-      </div>
-    </section>
-
-    <!-- =====================================================
-         THIỆP MỜI (GIỮ NGUYÊN)
-         ===================================================== -->
-    <section id="invitation" class="section">
-      <h2>Thiệp Mời</h2>
-      <p class="section-text">
-        Trân trọng kính mời Quý khách đến dự lễ thành hôn của chúng tôi.<br />
-        Sự hiện diện của Quý khách là niềm vinh hạnh cho gia đình hai bên.
-      </p>
-      <p class="section-info">
-        📅 <strong>Ngày 14 tháng 02 năm 2026</strong><br />
-        📍 <strong>Khách sạn Hải Âu – Quy Nhơn</strong>
-      </p>
-    </section>
-
-    <!-- =====================================================
-         CHUYỆN CHÚNG TÔI (GIỮ NGUYÊN)
-         ===================================================== -->
-    <section id="story" class="section alt">
-      <h2>Chuyện Chúng Tôi</h2>
-      <p class="section-text">
-        Từ những ngày đầu gặp gỡ, chúng tôi đã cùng nhau chia sẻ những khoảnh
-        khắc giản dị nhưng đầy yêu thương.
-      </p>
-      <p class="section-text">
-        Sau hành trình ấy, chúng tôi quyết định về chung một nhà và bắt đầu
-        chương mới của cuộc đời.
-      </p>
-    </section>
-
-    <!-- =====================================================
-         ALBUM (GIỮ NGUYÊN)
-         ===================================================== -->
-    <section id="gallery" class="section">
-      <h2>Album Ảnh</h2>
-      <div class="gallery-grid">
-        <img src="assets/images/gallery/1.jpg" />
-        <img src="assets/images/gallery/2.jpg" />
-        <img src="assets/images/gallery/3.jpg" />
-        <img src="assets/images/gallery/4.jpg" />
-      </div>
-    </section>
-
-    <!-- =====================================================
-         RSVP (GIỮ NGUYÊN)
-         ===================================================== -->
-    <section id="rsvp" class="section alt">
-      <h2>Xác Nhận Tham Dự</h2>
-      <p class="section-text">
-        Vui lòng xác nhận sự tham dự của bạn để buổi tiệc được chuẩn bị chu đáo
-        hơn.
-      </p>
-
-      <form id="rsvpForm" class="rsvp-form">
-        <input id="name" placeholder="Họ và tên" required />
-        <select id="attend" required>
-          <option value="">Bạn sẽ tham dự?</option>
-          <option value="Có">Có, tôi sẽ đến</option>
-          <option value="Không">Xin lỗi, tôi không tham dự được</option>
-        </select>
-
-        <select id="side" required>
-          <option value="">Bạn tham dự tại đâu?</option>
-          <option value="Nhà gái - Quảng Bình">Nhà gái – Quảng Bình</option>
-          <option value="Nhà trai - Bình Định">Nhà trai – Bình Định</option>
-        </select>
-
-        <input
-          id="guests"
-          type="number"
-          min="1"
-          placeholder="Số người tham dự"
-        />
-        <textarea id="note" placeholder="Ghi chú (nếu có)"></textarea>
-        <button type="submit">Gửi xác nhận</button>
-      </form>
-
-      <p id="rsvpMessage"></p>
-    </section>
-
-    <!-- =====================================================
-         LOCATION (GIỮ NGUYÊN – GOOGLE MAP)
-         ===================================================== -->
-    <section id="location" class="section">
-      <h2>Địa Điểm Tổ Chức</h2>
-
-      <div class="location-grid">
-        <div class="location-box">
-          <h3>Nhà gái – Quảng Bình</h3>
-          <p><strong>Trường THCS Hiền Ninh, Quảng Bình</strong></p>
-          <iframe
-            src="https://www.google.com/maps?q=Trường+THCS+Hiền+Ninh+Quảng+Bình&output=embed"
-          ></iframe>
-        </div>
-
-        <div class="location-box">
-          <h3>Nhà trai – Bình Định</h3>
-          <p><strong>Khách sạn Hải Âu – Quy Nhơn</strong></p>
-          <iframe
-            src="https://www.google.com/maps?q=Khách+sạn+Hải+Âu+Quy+Nhơn&output=embed"
-          ></iframe>
-        </div>
-      </div>
-    </section>
-
-    <!-- =====================================================
-         ADD TODAY – CONTACT FLOAT (ZALO / MESSENGER)
-         ===================================================== -->
-    <div id="contactWrap">
-      <div id="contactMain">💬</div>
-
-      <div class="contact-menu">
-        <a
-          href="https://zalo.me/0901234567"
-          target="_blank"
-          class="contact-item zalo"
-        >
-          <img src="assets/images/zalo.png" alt="Zalo" />
-        </a>
-
-        <a
-          href="https://m.me/your.facebook.id"
-          target="_blank"
-          class="contact-item messenger"
-        >
-          <img src="assets/images/messenger.png" alt="Messenger" />
-        </a>
-      </div>
+    <div class="location-box">
+      <h3>Nhà trai – Bình Định</h3>
+      <p><strong>Khách sạn Hải Âu – Quy Nhơn</strong></p>
+      <iframe
+        src="https://www.google.com/maps?q=Khách+sạn+Hải+Âu+Quy+Nhơn&output=embed">
+      </iframe>
     </div>
-    <!-- ===== END ADD TODAY – CONTACT ===== -->
+  </div>
+</section>
 
-    <!-- =====================================================
-         MUSIC TOGGLE (GIỮ NGUYÊN – FILE HÔM QUA)
-         ===================================================== -->
-    <button id="musicToggle">🔊</button>
+<!-- ================= CONTACT FLOAT ================= -->
+<div id="contactWrap">
+  <div id="contactMain">💬</div>
+  <div class="contact-menu">
+    <a href="https://zalo.me/0901234567" target="_blank" class="contact-item zalo">
+      <img src="assets/images/zalo.png" />
+    </a>
+    <a href="https://m.me/your.facebook.id" target="_blank" class="contact-item messenger">
+      <img src="assets/images/messenger.png" />
+    </a>
+  </div>
+</div>
 
-    <!-- JS (GIỮ NGUYÊN FILE CŨ + ĐÃ ADD LOGIC) -->
-    <script src="js/script.js"></script>
-  </body>
+<button id="musicToggle">🔊</button>
+
+<script src="assets/js/script.js"></script>
+</body>
 </html>
