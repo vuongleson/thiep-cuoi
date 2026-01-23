@@ -80,110 +80,96 @@ body {
 }
 
 /* =====================================================
-   HERO – MOBILE FIRST (GỌN)
+   HERO – FULL IMAGE, NO CROP, NO OVERFLOW
    ===================================================== */
 .hero {
-  padding: 48px 16px;
+  position: relative;
+  padding: 40px 16px;
   text-align: center;
 }
 
+/* Ảnh hiển thị TRỌN VẸN */
 .hero-img {
   display: block;
   width: 100%;
-  max-height: 300px;
-  object-fit: cover;
-  border-radius: 14px;
+  height: auto; /* theo đúng tỷ lệ ảnh gốc */
+  max-width: 1400px;
+  margin: 0 auto;
+  object-fit: contain; /* KHÔNG BAO GIỜ CẮT */
+  border-radius: 16px;
+  background: #000; /* nền cho phần dư */
 }
 
+/* Chữ đè nhẹ lên ảnh (desktop) */
 .hero-text {
-  margin-top: 24px;
+  position: absolute;
+  left: 50%;
+  bottom: 60px;
+  transform: translateX(-50%);
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+  padding: 0 24px;
+  pointer-events: none;
+}
+
+/* Nền tối nhẹ chỉ quanh chữ */
+.hero-text::before {
+  content: "";
+  position: absolute;
+  inset: -20px -40px;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 14px;
+  z-index: -1;
 }
 
 .hero-title {
   font-family: "Playfair Display", serif;
-  font-size: 32px;
+  font-size: 54px;
 }
 
 .hero-names {
   font-family: "Playfair Display", serif;
-  font-size: 22px;
-  margin-top: 6px;
+  font-size: 36px;
+  margin-top: 10px;
 }
 
 .hero-date {
-  margin-top: 6px;
-  letter-spacing: 2px;
+  margin-top: 8px;
+  letter-spacing: 3px;
 }
 
 /* =====================================================
-   DESKTOP / LAPTOP – HERO FULL + TEXT OVERLAY
+   MOBILE – ẢNH TRÊN, CHỮ DƯỚI (AN TOÀN)
    ===================================================== */
-/* =====================================================
-   HERO DESKTOP – SHOW FULL IMAGE (NO CROP)
-   ===================================================== */
-
-@media (min-width: 1024px) {
-  /* KHUNG HERO KHÔNG ÉP CHIỀU CAO */
+@media (max-width: 768px) {
   .hero {
-    position: relative;
-    padding: 0;
-    height: auto; /* 🔥 KHÔNG ÉP */
-    max-height: none;
-    overflow: hidden;
-    background: #000; /* nền cho phần dư */
+    padding: 32px 16px;
   }
 
-  /* ẢNH HIỂN THỊ TRỌN VẸN */
   .hero-img {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: auto; /* 🔥 theo tỷ lệ ảnh */
-    max-width: 100%;
-    object-fit: contain; /* 🔥 KHÔNG CẮT */
-    margin: 0 auto;
-    border-radius: 0;
-    background: #000;
+    border-radius: 12px;
   }
 
-  /* OVERLAY NHẸ */
-  .hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35));
-    z-index: 1;
-    pointer-events: none;
-  }
-
-  /* CHỮ ĐÈ LÊN ẢNH */
   .hero-text {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #fff;
-    margin: 0;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
-    padding: 0 24px;
+    position: static;
+    transform: none;
+    margin-top: 20px;
+    color: #4a3b2a;
+    text-shadow: none;
+  }
+
+  .hero-text::before {
+    display: none;
   }
 
   .hero-title {
-    font-size: 54px;
+    font-size: 32px;
   }
 
   .hero-names {
-    font-size: 36px;
-    margin-top: 12px;
-  }
-
-  .hero-date {
-    margin-top: 10px;
-    letter-spacing: 3px;
+    font-size: 22px;
   }
 }
 
@@ -208,7 +194,7 @@ body {
 }
 
 /* =====================================================
-   INVITATION (NHÀ GÁI / NHÀ TRAI)
+   INVITATION – NHÀ GÁI / NHÀ TRAI
    ===================================================== */
 .invitation-sides {
   display: grid;
@@ -298,7 +284,7 @@ body {
 }
 
 /* =====================================================
-   MOBILE ADJUST
+   MOBILE GRID ADJUST
    ===================================================== */
 @media (max-width: 768px) {
   .invitation-sides,
