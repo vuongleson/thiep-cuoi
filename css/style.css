@@ -228,3 +228,41 @@ body {
     height: 240px;
   }
 }
+/* =====================================================
+   WIDEN DESKTOP LAYOUT (FIX WEB BỊ CO)
+   ===================================================== */
+
+/* Màn hình desktop lớn */
+@media (min-width: 1200px) {
+
+  .section,
+  .nav-menu,
+  .gallery,
+  .gallery-grid,
+  .location-grid {
+    max-width: 1400px;   /* nới từ 1200 → 1400 */
+  }
+
+  .hero-img {
+    max-width: 1300px;   /* ảnh hero rộng hơn */
+    max-height: 520px;
+  }
+}
+
+/* Màn hình rất lớn (2K trở lên) */
+@media (min-width: 1600px) {
+
+  .section,
+  .nav-menu,
+  .gallery,
+  .gallery-grid,
+  .location-grid {
+    max-width: 1600px;
+  }
+
+  .hero-img {
+    max-width: 1500px;
+    max-height: 560px;
+  }
+}
+
