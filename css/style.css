@@ -1,328 +1,171 @@
-* { margin:0; padding:0; box-sizing:border-box; }
+/* =====================================================
+   RESET & BASE
+   ===================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Montserrat, sans-serif;
-  background:#f6f1e8;
-  color:#4a3b2a;
+  font-family: "Montserrat", sans-serif;
+  background: #f6f1e8;
+  color: #4a3b2a;
 }
 
-/* INTRO */
+/* =====================================================
+   INTRO
+   ===================================================== */
 #intro {
-  position:fixed;
-  inset:0;
-  z-index:9999;
-  background:linear-gradient(rgba(120,0,0,.75),rgba(120,0,0,.75)),
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background:
+    linear-gradient(rgba(120,0,0,.75), rgba(120,0,0,.75)),
     url("../assets/images/intro-bg.jpg") center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  touch-action:none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: none;
 }
-#intro.hide { opacity:0; pointer-events:none; transition:.6s; }
 
-.intro-box { text-align:center; color:#fff; padding:20px; }
-.intro-names span { color:gold; }
+#intro.hide {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .6s ease;
+}
+
+.intro-box {
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+}
+
+.intro-box span {
+  color: gold;
+}
+
 #enterWedding {
-  margin-top:20px;
-  padding:14px 32px;
-  border-radius:40px;
-  border:none;
-  background:gold;
-  color:#800000;
-  font-weight:bold;
+  margin-top: 20px;
+  padding: 14px 32px;
+  border-radius: 40px;
+  border: none;
+  background: gold;
+  color: #800000;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-/* HEADER */
-.site-header { background:#f6f1e8; padding:12px; }
+/* =====================================================
+   HEADER
+   ===================================================== */
+.site-header {
+  background: #f6f1e8;
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(0,0,0,.05);
+}
+
 .nav-menu {
-  display:flex;
-  gap:12px;
-  justify-content:center;
-  flex-wrap:wrap;
-}
-.nav-menu a { text-decoration:none; color:#5a4a3b; font-size:14px; }
-
-/* HERO */
-.hero {
-  position:relative;
-  height:100vh;
-  overflow:hidden;
-}
-.hero-img {
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-.hero-overlay {
-  position:absolute; inset:0;
-  background:rgba(0,0,0,.3);
-}
-.hero-text {
-  position:absolute;
-  inset:0;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  color:#fff;
-  text-align:center;
-  padding:16px;
-}
-
-/* SECTION */
-.section { padding:60px 16px; text-align:center; }
-.section.alt { background:#fff; }
-
-/* GALLERY */
-.gallery {
-  display:grid;
-  grid-template-columns:1fr;
-  gap:10px;
-}
-.gallery img { width:100%; height:220px; object-fit:cover; }
-
-/* MAP */
-iframe {
-  width:100%;
-  height:260px;
-  border:0;
-  border-radius:10px;
-}
-
-/* CONTACT */
-#contactWrap {
-  position:fixed;
-  bottom:16px;
-  right:16px;
-  z-index:1000;
-}
-#contactMain {
-  width:48px;
-  height:48px;
-  border-radius:50%;
-  background:#800000;
-  color:gold;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.contact-menu {
-  display:none;
-  margin-bottom:10px;
-}
-#contactWrap.open .contact-menu { display:block; }
-
-/* MUSIC */
-#musicToggle {
-  position:fixed;
-  bottom:16px;
-  left:16px;
-  width:44px;
-  height:44px;
-  border-radius:50%;
-  border:none;
-  background:#5a4a3b;
-  color:#fff;
-}
-/* =====================================================
-   FINAL MOBILE IMAGE FIX – ADD BELOW
-   ===================================================== */
-
-/* ================= HERO FINAL FIX ================= */
-.hero {
-  position: relative;
-  background: #000;
-}
-
-/* Mobile: thấy trọn người */
-@media (max-width: 768px) {
-  .hero {
-    min-height: 100vh;
-    height: auto;
-  }
-
-  .hero-img {
-    position: relative;
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    background: #000;
-  }
-
-  .hero-overlay {
-    background: linear-gradient(
-      rgba(0,0,0,0.15),
-      rgba(0,0,0,0.45)
-    );
-  }
-
-  .hero-text {
-    position: absolute;
-    bottom: 10%;
-    left: 0;
-    right: 0;
-    padding: 0 18px;
-    text-align: center;
-  }
-}
-
-/* Desktop: full màn */
-@media (min-width: 769px) {
-  .hero {
-    height: 100vh;
-  }
-
-  .hero-img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-/* ================= GALLERY FINAL FIX ================= */
-.gallery,
-.gallery-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
-}
-
-.gallery img,
-.gallery-grid img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  border-radius: 12px;
-  background: #f0f0f0;
-}
-
-@media (min-width: 769px) {
-  .gallery,
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* ================= INTRO FINAL FIX ================= */
-#intro {
-  background-size: contain;
-  background-position: center;
-}
-
-@media (min-width: 769px) {
-  #intro {
-    background-size: cover;
-  }
-}
-
-/* ================= SAFE AREA FIX ================= */
-@media (max-width: 768px) {
-  .hero-text,
-  .intro-box {
-    padding-left: calc(16px + env(safe-area-inset-left));
-    padding-right: calc(16px + env(safe-area-inset-right));
-  }
-}
-/* =====================================================
-   FINAL POLISH – MOBILE FIRST
-   ===================================================== */
-
-/* ===== HERO CÂN ĐỐI LẠI ===== */
-@media (max-width: 768px) {
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .hero-img {
-    max-height: 80vh;   /* QUAN TRỌNG */
-    margin-top: 6vh;
-  }
-
-  .hero-text {
-    bottom: auto;
-    top: 12%;
-    padding: 0 20px;
-  }
-}
-
-/* ===== HERO DESKTOP GIỮ ĐẸP ===== */
-@media (min-width: 769px) {
-  .hero-text {
-    bottom: 18%;
-  }
-}
-
-/* ===== GALLERY ĐẸP NHƯ ALBUM ===== */
-.gallery img,
-.gallery-grid img {
-  border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-  background: #fff;
-  padding: 6px;
-}
-/* =====================================================
-   REVERT TO CLEAN & COMPACT LAYOUT (FINAL)
-   ===================================================== */
-
-/* ===== KHUNG CHUNG (QUAN TRỌNG) ===== */
-.section,
-.hero-text,
-.gallery,
-.gallery-grid {
   max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
-/* ===== HERO – THU GỌN LẠI ===== */
+.nav-menu a {
+  text-decoration: none;
+  color: #5a4a3b;
+  font-size: 14px;
+}
+
+/* =====================================================
+   HERO – GỌN NHƯ PHIÊN BẢN BAN ĐẦU
+   ===================================================== */
 .hero {
-  height: auto;
-  min-height: unset;
-  padding: 40px 0;
-  background: #000;
+  padding: 60px 16px;
+  text-align: center;
 }
 
-/* Mobile */
+.hero-img {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  max-height: 420px;
+  margin: 0 auto;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.hero-text {
+  margin-top: 28px;
+}
+
+.hero-title {
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+}
+
+.hero-names {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  margin-top: 10px;
+}
+
+.hero-date {
+  margin-top: 6px;
+  letter-spacing: 2px;
+}
+
+/* Mobile hero nhỏ hơn */
 @media (max-width: 768px) {
+  .hero {
+    padding: 40px 16px;
+  }
+
   .hero-img {
-    position: relative;
-    width: 100%;
-    max-height: 70vh;     /* QUAN TRỌNG */
-    object-fit: cover;   /* quay về kiểu cũ */
+    max-height: 300px;
     border-radius: 12px;
   }
 
-  .hero-text {
-    position: static;
-    margin-top: 20px;
-    padding: 0 16px;
+  .hero-title {
+    font-size: 30px;
+  }
+
+  .hero-names {
+    font-size: 22px;
   }
 }
 
-/* Desktop */
-@media (min-width: 769px) {
-  .hero {
-    padding: 80px 0;
-  }
-
-  .hero-img {
-    max-height: 520px;
-    object-fit: cover;
-    border-radius: 16px;
-  }
-
-  .hero-text {
-    margin-top: 24px;
-  }
+/* =====================================================
+   SECTION
+   ===================================================== */
+.section {
+  max-width: 960px;
+  margin: auto;
+  padding: 70px 16px;
+  text-align: center;
 }
 
-/* ===== GALLERY – GỌN NHƯ ALBUM ===== */
+.section.alt {
+  background: #fff;
+}
+
+.section h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  margin-bottom: 18px;
+}
+
+/* =====================================================
+   GALLERY – GỌN, ĐỀU, KHÔNG TRÀN
+   ===================================================== */
 .gallery,
 .gallery-grid {
+  max-width: 960px;
+  margin: 30px auto 0;
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
 }
@@ -330,21 +173,123 @@ iframe {
 .gallery img,
 .gallery-grid img {
   width: 100%;
-  height: 220px;        /* quay về kiểu cũ */
+  height: 220px;
   object-fit: cover;
   border-radius: 12px;
-  background: none;
-  box-shadow: none;
 }
 
-/* Mobile gallery 1 cột */
+/* Mobile: 1 cột */
 @media (max-width: 768px) {
   .gallery,
   .gallery-grid {
     grid-template-columns: 1fr;
   }
+
+  .gallery img,
+  .gallery-grid img {
+    height: 200px;
+  }
 }
 
+/* =====================================================
+   RSVP FORM
+   ===================================================== */
+.rsvp-form {
+  max-width: 420px;
+  margin: 30px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
 
+.rsvp-form input,
+.rsvp-form select,
+.rsvp-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
 
+.rsvp-form button {
+  background: #5a4a3b;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+}
 
+/* =====================================================
+   GOOGLE MAP – 2 BÊN NHÀ TRAI / NHÀ GÁI
+   ===================================================== */
+.location-grid {
+  max-width: 1000px;
+  margin: 40px auto 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.location-box iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+  border-radius: 12px;
+}
+
+/* Mobile: xếp dọc */
+@media (max-width: 768px) {
+  .location-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .location-box iframe {
+    height: 240px;
+  }
+}
+
+/* =====================================================
+   CONTACT FLOAT
+   ===================================================== */
+#contactWrap {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+#contactMain {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #800000;
+  color: gold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.contact-menu {
+  display: none;
+  margin-bottom: 10px;
+}
+
+#contactWrap.open .contact-menu {
+  display: block;
+}
+
+/* =====================================================
+   MUSIC TOGGLE
+   ===================================================== */
+#musicToggle {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: #5a4a3b;
+  color: #fff;
+  cursor: pointer;
+}
