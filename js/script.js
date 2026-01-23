@@ -56,7 +56,7 @@ if (entered === "true") {
 }
 
 /* ===== CLICK MỞ THIỆP ===== */
-enterBtn?.addEventListener("click", () => {
+enterBtn?.addEventListener("click", () => {window.scrollTo({ top: 0, behavior: "instant" });
   localStorage.setItem("enteredWedding", "true");
 
   /* bật nhạc theo luật trình duyệt */
@@ -98,3 +98,4 @@ function checkShowContact() {
     contactWrap?.classList.add("show");
   }
 }
+
