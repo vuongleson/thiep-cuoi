@@ -2,36 +2,50 @@ const intro = document.getElementById("intro");
 const enterBtn = document.getElementById("enterWedding");
 const music = document.getElementById("bgMusic");
 const musicToggle = document.getElementById("musicToggle");
-const contactWrap = document.getElementById("contactWrap");
-const contactMain = document.getElementById("contactMain");
 
 let started = false;
 
-if (localStorage.getItem("enteredWedding") === "true") {
-  intro.style.display = "none";
-}
+/* LUÔN HIỆN INTRO – KHÔNG NHỚ TRẠNG THÁI */
+intro.style.display = "flex";
 
+/* BẤM NÚT MỚI VÀO THIỆP */
 enterBtn.addEventListener("click", () => {
-  window.scrollTo(0,0);
-  localStorage.setItem("enteredWedding","true");
+  // Cuộn về đầu cho chắc
+  window.scrollTo({ top: 0, behavior: "instant" });
 
-  music.play().then(()=>{
-    started = true;
-    musicToggle.textContent="🔊";
-  }).catch(()=>{});
+  // Play nhạc (đúng luật iOS)
+  music
+    .play()
+    .then(() => {
+      started = true;
+      musicToggle.textContent = "🔊";
+    })
+    .catch(() => {});
 
+  // Ẩn intro
   intro.classList.add("hide");
-  setTimeout(()=>intro.style.display="none",600);
+  setTimeout(() => {
+    intro.style.display = "none";
+  }, 600);
 });
 
-musicToggle.addEventListener("click",()=>{
-  if(!started){
-    music.play().then(()=>started=true);
-  }else{
-    music.paused ? music.play() : music.pause();
+/* TOGGLE NHẠC */
+musicToggle.addEventListener("click", () => {
+  if (!started) {
+    music
+      .play()
+      .then(() => {
+        started = true;
+        musicToggle.textContent = "🔊";
+      })
+      .catch(() => {});
+  } else {
+    if (music.paused) {
+      music.play();
+      musicToggle.textContent = "🔊";
+    } else {
+      music.pause();
+      musicToggle.textContent = "🔇";
+    }
   }
-});
-
-contactMain.addEventListener("click",()=>{
-  contactWrap.classList.toggle("open");
 });
