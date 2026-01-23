@@ -17,7 +17,7 @@ body {
   inset: 0;
   z-index: 9999;
   background:
-    linear-gradient(rgba(120,0,0,.75), rgba(120,0,0,.75)),
+    linear-gradient(rgba(120, 0, 0, 0.75), rgba(120, 0, 0, 0.75)),
     url("../assets/images/intro-bg.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
@@ -52,7 +52,7 @@ body {
 /* HEADER */
 .site-header {
   background: #f6f1e8;
-  border-bottom: 1px solid rgba(0,0,0,.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .nav-menu {
@@ -201,7 +201,6 @@ body {
 
 /* MOBILE */
 @media (max-width: 768px) {
-
   .hero-img {
     max-height: 300px;
   }
@@ -234,24 +233,22 @@ body {
 
 /* Màn hình desktop lớn */
 @media (min-width: 1200px) {
-
   .section,
   .nav-menu,
   .gallery,
   .gallery-grid,
   .location-grid {
-    max-width: 1400px;   /* nới từ 1200 → 1400 */
+    max-width: 1400px; /* nới từ 1200 → 1400 */
   }
 
   .hero-img {
-    max-width: 1300px;   /* ảnh hero rộng hơn */
+    max-width: 1300px; /* ảnh hero rộng hơn */
     max-height: 520px;
   }
 }
 
 /* Màn hình rất lớn (2K trở lên) */
 @media (min-width: 1600px) {
-
   .section,
   .nav-menu,
   .gallery,
@@ -265,4 +262,65 @@ body {
     max-height: 560px;
   }
 }
+/* =====================================================
+   HERO FULL IMAGE + TEXT OVERLAY (DESKTOP / LAPTOP)
+   ===================================================== */
 
+@media (min-width: 1024px) {
+  .hero {
+    position: relative;
+    padding: 0;
+    height: 80vh; /* full đẹp cho laptop */
+    max-height: 680px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    object-fit: cover;
+    border-radius: 0;
+    z-index: 1;
+  }
+
+  /* Overlay để chữ dễ đọc */
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45));
+    z-index: 2;
+  }
+
+  .hero-text {
+    position: relative;
+    z-index: 3;
+    margin-top: 0;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
+  }
+
+  .hero-title {
+    font-size: 56px;
+    letter-spacing: 1px;
+  }
+
+  .hero-names {
+    font-size: 36px;
+    margin-top: 12px;
+  }
+
+  .hero-date {
+    margin-top: 10px;
+    font-size: 15px;
+    letter-spacing: 3px;
+  }
+}
