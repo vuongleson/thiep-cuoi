@@ -11,7 +11,6 @@ document.body.style.overflow = "hidden";
 openBtn.addEventListener("click", () => {
   intro.classList.add("hide");
 
-  // phát nhạc (được phép vì có click)
   if (music) {
     music.play().then(() => {
       started = true;
@@ -19,7 +18,6 @@ openBtn.addEventListener("click", () => {
     }).catch(() => {});
   }
 
-  // mở khóa trang & remove intro
   setTimeout(() => {
     intro.remove();
     document.body.style.overflow = "";
