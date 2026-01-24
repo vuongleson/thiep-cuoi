@@ -17,7 +17,7 @@ body{
 }
 .intro-card{
   width:92%;
-  max-width:520px;
+  max-width:560px;
   background:linear-gradient(#5b0a0a,#2a0000);
   border-radius:32px;
   padding:64px 40px;
@@ -83,7 +83,7 @@ body{
   background:#000;
 }
 
-/* CAPTION TRÊN ẢNH */
+/* ===== HERO CAPTION – DESKTOP FIRST ===== */
 .hero-caption{
   position:absolute;
   left:50%;
@@ -91,19 +91,37 @@ body{
   transform:translateX(-50%);
   text-align:center;
   color:#fff;
-  background:rgba(0,0,0,.42);
-  backdrop-filter:blur(4px);
-  padding:22px 32px;
-  border-radius:18px;
+
+  /* không có nền – caption “in” trên ảnh */
+  background:none;
+  backdrop-filter:none;
+  padding:0;
+
+  max-width:90%;
+  pointer-events:none;
 }
+
+/* tăng độ đọc chữ */
+.hero-caption h1,
+.hero-caption h2,
+.hero-caption p{
+  text-shadow:
+    0 2px 6px rgba(0,0,0,.65),
+    0 8px 20px rgba(0,0,0,.45);
+}
+
 .hero-caption h1{
   font-family:"Playfair Display",serif;
   font-size:44px;
+  line-height:1.2;
 }
+
 .hero-caption h2{
   font-family:"Playfair Display",serif;
   font-size:26px;
+  margin-top:4px;
 }
+
 .hero-caption p{
   font-size:15px;
   letter-spacing:2px;
@@ -178,20 +196,65 @@ body{
   color:#fff;
 }
 
-/* MOBILE */
-@media(max-width:768px){
+/* =====================================================
+   MOBILE FIX – HERO / INTRO / GRID
+   ===================================================== */
+@media (max-width: 768px){
+
+  /* INTRO scale lại cho mobile */
   .intro-card{
-    padding:48px 24px;
+    padding:36px 22px;
   }
-  .intro-names{font-size:30px}
+
+  .intro-names{
+    font-size:26px;
+  }
+
+  #openInvitation{
+    padding:14px 30px;
+    font-size:15px;
+  }
+
+  /* HERO */
+  .hero{
+    margin-top:24px;
+  }
+
+  /* CAPTION MOBILE – GỌN, KHÔNG ĐÈ ẢNH */
   .hero-caption{
-    top:18px;
-    padding:16px 22px;
+    top:12px;
+    max-width:88%;
   }
-  .hero-caption h1{font-size:28px}
-  .hero-caption h2{font-size:20px}
-  .invitation-sides,.gallery,.location-grid{
+
+  .hero-caption h1{
+    font-size:22px;
+    line-height:1.25;
+  }
+
+  .hero-caption h2{
+    font-size:16px;
+    margin-top:2px;
+  }
+
+  .hero-caption p{
+    font-size:11px;
+    letter-spacing:1.5px;
+    margin-top:4px;
+  }
+
+  /* GRID */
+  .invitation-sides,
+  .gallery,
+  .location-grid{
     grid-template-columns:1fr;
   }
-  .gallery img{height:200px}
+
+  .gallery img{
+    height:200px;
+  }
+
+  .location-box iframe{
+    height:240px;
+  }
 }
+
