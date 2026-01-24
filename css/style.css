@@ -1,430 +1,92 @@
-/* =====================================================
-   RESET & BASE
-   ===================================================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:Montserrat,sans-serif;
+  background:#f6f1e8;
+  color:#4a3b2a;
 }
 
-body {
-  font-family: "Montserrat", sans-serif;
-  background: #f6f1e8;
-  color: #4a3b2a;
+/* INTRO */
+#intro{
+  position:fixed;inset:0;z-index:9999;
+  background:radial-gradient(circle at top,#6b0f0f,#2b0000);
+  display:flex;align-items:center;justify-content:center;
+}
+.intro-card{
+  background:linear-gradient(#5b0a0a,#2a0000);
+  border-radius:28px;
+  padding:48px 28px;
+  text-align:center;
+  color:#f5e4b8;
+  box-shadow:0 25px 70px rgba(0,0,0,.6);
+  position:relative;
+}
+.intro-card::before{
+  content:"";
+  position:absolute;top:0;left:0;right:0;height:120px;
+  background:linear-gradient(135deg,#7a1212,#4a0000);
+  clip-path:polygon(0 0,50% 70%,100% 0);
+  border-radius:28px 28px 0 0;
+}
+.intro-heart{
+  width:64px;height:64px;margin:0 auto 16px;
+  background:#f5e4b8;color:#5b0a0a;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:28px;
+}
+#openInvitation{
+  margin-top:26px;padding:14px 34px;
+  border-radius:999px;border:none;
+  background:#f5e4b8;color:#5b0a0a;
+  cursor:pointer;
+}
+#intro.hide{opacity:0;pointer-events:none;transition:.6s}
+
+/* HEADER */
+.site-header{border-bottom:1px solid rgba(0,0,0,.05)}
+.nav-menu{
+  max-width:1200px;margin:auto;padding:16px;
+  display:flex;justify-content:center;gap:24px;flex-wrap:wrap;
+}
+.nav-menu a{text-decoration:none;color:#5a4a3b}
+
+/* HERO */
+.hero{max-width:1400px;margin:40px auto 0;padding:0 16px;text-align:center}
+.hero-img{
+  width:100%;height:auto;object-fit:contain;
+  border-radius:16px;background:#000;
+}
+.hero-text{margin-top:24px}
+.hero-title{font-family:"Playfair Display",serif;font-size:40px}
+
+/* SECTION */
+.section{max-width:1200px;margin:auto;padding:80px 16px;text-align:center}
+.section.alt{background:#fff}
+
+/* INVITATION */
+.invitation-sides{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px}
+.invitation-box{background:#fff;padding:24px;border-radius:14px}
+
+/* GALLERY */
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.gallery img{width:100%;height:220px;object-fit:cover;border-radius:14px}
+
+/* RSVP */
+.rsvp-form{max-width:420px;margin:30px auto;display:flex;flex-direction:column;gap:12px}
+
+/* MAP */
+.location-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.location-box iframe{width:100%;height:300px;border-radius:14px;border:0}
+
+/* MUSIC */
+#musicToggle{
+  position:fixed;bottom:20px;left:20px;
+  width:44px;height:44px;border-radius:50%;
+  border:none;background:#5a4a3b;color:#fff;
 }
 
-/* =====================================================
-   INTRO
-   ===================================================== */
-#intro {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background:
-    linear-gradient(rgba(120, 0, 0, 0.75), rgba(120, 0, 0, 0.75)),
-    url("../assets/images/intro-bg.jpg") center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* MOBILE */
+@media(max-width:768px){
+  .invitation-sides,.gallery,.location-grid{grid-template-columns:1fr}
+  .gallery img{height:200px}
 }
-
-#intro.hide {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.6s ease;
-}
-
-.intro-box {
-  text-align: center;
-  color: #fff;
-  padding: 20px;
-}
-
-.intro-box span {
-  color: gold;
-}
-
-#enterWedding {
-  margin-top: 20px;
-  padding: 14px 36px;
-  border-radius: 40px;
-  border: none;
-  background: gold;
-  color: #800000;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/* =====================================================
-   HEADER
-   ===================================================== */
-.site-header {
-  background: #f6f1e8;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.nav-menu {
-  max-width: 1400px;
-  margin: auto;
-  padding: 16px;
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-
-.nav-menu a {
-  text-decoration: none;
-  color: #5a4a3b;
-  font-size: 14px;
-}
-
-/* =====================================================
-   HERO – IMAGE AS CONTENT (NO CROP, NO OVERLAY)
-   ===================================================== */
-.hero {
-  max-width: 1400px;
-  margin: 40px auto 0;
-  padding: 0 16px;
-  text-align: center;
-}
-
-/* Ảnh hiển thị TRỌN VẸN, KHÔNG CẮT */
-.hero-img {
-  display: block;
-  width: 100%;
-  height: auto; /* theo đúng tỷ lệ ảnh gốc */
-  max-width: 100%;
-  object-fit: contain; /* KHÔNG BAO GIỜ CẮT */
-  border-radius: 16px;
-  background: #000;
-}
-
-/* Chữ nằm DƯỚI ẢNH – KHÔNG ĐÈ */
-.hero-text {
-  margin-top: 28px;
-  text-align: center;
-}
-
-.hero-title {
-  font-family: "Playfair Display", serif;
-  font-size: 40px;
-}
-
-.hero-names {
-  font-family: "Playfair Display", serif;
-  font-size: 26px;
-  margin-top: 8px;
-}
-
-.hero-date {
-  margin-top: 6px;
-  letter-spacing: 2px;
-}
-
-/* =====================================================
-   SECTION
-   ===================================================== */
-.section {
-  max-width: 1400px;
-  margin: auto;
-  padding: 80px 16px;
-  text-align: center;
-}
-
-.section.alt {
-  background: #fff;
-}
-
-.section h2 {
-  font-family: "Playfair Display", serif;
-  font-size: 28px;
-  margin-bottom: 20px;
-}
-
-/* =====================================================
-   INVITATION – NHÀ GÁI / NHÀ TRAI
-   ===================================================== */
-.invitation-sides {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  margin-top: 32px;
-}
-
-.invitation-box {
-  background: #fff;
-  padding: 24px;
-  border-radius: 14px;
-}
-
-/* =====================================================
-   GALLERY
-   ===================================================== */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-}
-
-.gallery img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 14px;
-}
-
-/* =====================================================
-   RSVP
-   ===================================================== */
-.rsvp-form {
-  max-width: 420px;
-  margin: 30px auto 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.rsvp-form input,
-.rsvp-form select,
-.rsvp-form textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-}
-
-.rsvp-form button {
-  background: #5a4a3b;
-  color: #fff;
-  border: none;
-  padding: 12px;
-  cursor: pointer;
-}
-
-/* =====================================================
-   GOOGLE MAP – 2 BÊN
-   ===================================================== */
-.location-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-}
-
-.location-box iframe {
-  width: 100%;
-  height: 300px;
-  border-radius: 14px;
-  border: 0;
-}
-
-/* =====================================================
-   MUSIC
-   ===================================================== */
-#musicToggle {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: none;
-  background: #5a4a3b;
-  color: #fff;
-  cursor: pointer;
-}
-
-/* =====================================================
-   MOBILE
-   ===================================================== */
-@media (max-width: 768px) {
-  .hero {
-    margin-top: 24px;
-  }
-
-  .hero-title {
-    font-size: 30px;
-  }
-
-  .hero-names {
-    font-size: 22px;
-  }
-
-  .invitation-sides,
-  .gallery,
-  .location-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery img {
-    height: 200px;
-  }
-
-  .location-box iframe {
-    height: 240px;
-  }
-}
-/* =====================================================
-   INTRO – PHONG BÌ ĐỎ VÀNG (FINAL)
-   ===================================================== */
-
-#intro {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background: radial-gradient(
-    circle at top,
-    #6b0f0f,
-    #2b0000
-  );
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Card phong bì */
-.intro-card {
-  width: 90%;
-  max-width: 380px;
-  background: linear-gradient(180deg, #5b0a0a, #2a0000);
-  border-radius: 28px;
-  padding: 48px 28px 42px;
-  text-align: center;
-  color: #f5e4b8;
-  box-shadow: 0 25px 70px rgba(0,0,0,.65);
-  position: relative;
-}
-
-/* Nắp phong bì */
-.intro-card::before {
-  content: "";
-  position: absolute;
-  top: -1px;
-  left: 0;
-  right: 0;
-  height: 120px;
-  background: linear-gradient(135deg, #7a1212, #4a0000);
-  clip-path: polygon(0 0, 50% 70%, 100% 0);
-  border-top-left-radius: 28px;
-  border-top-right-radius: 28px;
-}
-
-/* Tim */
-.intro-heart {
-  width: 64px;
-  height: 64px;
-  margin: 0 auto 16px;
-  background: #f5e4b8;
-  color: #5b0a0a;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  box-shadow: 0 0 0 6px rgba(245,228,184,.25);
-}
-
-/* Tên */
-.intro-names {
-  font-family: "Playfair Display", serif;
-  font-size: 30px;
-  margin-top: 10px;
-}
-
-/* Divider */
-.intro-divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin: 18px 0;
-}
-
-.intro-divider span:first-child,
-.intro-divider span:last-child {
-  width: 40px;
-  height: 1px;
-  background: rgba(245,228,184,.5);
-}
-
-/* Ngày */
-.intro-date {
-  font-size: 14px;
-  letter-spacing: 1px;
-  margin-bottom: 8px;
-}
-
-/* Thân mời */
-.intro-label {
-  font-size: 14px;
-  opacity: .85;
-}
-
-/* Nút mở thiệp */
-#openInvitation {
-  margin-top: 26px;
-  padding: 14px 34px;
-  border-radius: 999px;
-  border: none;
-  background: #f5e4b8;
-  color: #5b0a0a;
-  font-size: 16px;
-  cursor: pointer;
-  box-shadow: 0 6px 20px rgba(0,0,0,.4);
-  transition: transform .2s ease;
-}
-
-#openInvitation:hover {
-  transform: scale(1.05);
-}
-
-/* Fade out */
-#intro.hide {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .6s ease;
-}
-/* =====================================================
-   INTRO ENVELOPE OPEN ANIMATION
-   ===================================================== */
-
-.intro-card {
-  transform-style: preserve-3d;
-  perspective: 1200px;
-}
-
-/* Nắp phong bì */
-.intro-card::before {
-  transform-origin: top center;
-  transition: transform 0.9s ease;
-  backface-visibility: hidden;
-}
-
-/* Nội dung thiệp */
-.intro-card > * {
-  position: relative;
-  z-index: 2;
-  transition: transform 0.9s ease, opacity 0.6s ease;
-}
-
-/* Khi mở phong bì */
-#intro.open .intro-card::before {
-  transform: rotateX(-140deg);
-}
-
-/* Nội dung trượt lên nhẹ */
-#intro.open .intro-card > * {
-  transform: translateY(-12px);
-}
-
-/* Fade toàn intro */
-#intro.open {
-  animation: introFadeOut 0.8s ease forwards;
-  animation-delay: 0.6s;
-}
-
-@keyframes introFadeOut {
-  to {
-    opacity: 0;
-    transform: scale(0.96);
-  }
-}
-
