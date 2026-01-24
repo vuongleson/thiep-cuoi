@@ -5,7 +5,7 @@ body{
   color:#4a3b2a;
 }
 
-/* INTRO */
+/* ================= INTRO ================= */
 #intro{
   position:fixed;inset:0;z-index:9999;
   background:radial-gradient(circle at top,#6b0f0f,#2b0000);
@@ -17,32 +17,19 @@ body{
   padding:48px 28px;
   text-align:center;
   color:#f5e4b8;
-  box-shadow:0 25px 70px rgba(0,0,0,.6);
-  position:relative;
-}
-.intro-card::before{
-  content:"";
-  position:absolute;top:0;left:0;right:0;height:120px;
-  background:linear-gradient(135deg,#7a1212,#4a0000);
-  clip-path:polygon(0 0,50% 70%,100% 0);
-  border-radius:28px 28px 0 0;
-}
-.intro-heart{
-  width:64px;height:64px;margin:0 auto 16px;
-  background:#f5e4b8;color:#5b0a0a;
-  border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  font-size:28px;
 }
 #openInvitation{
-  margin-top:26px;padding:14px 34px;
-  border-radius:999px;border:none;
-  background:#f5e4b8;color:#5b0a0a;
+  margin-top:26px;
+  padding:14px 38px;
+  border-radius:999px;
+  border:none;
+  background:linear-gradient(135deg,#f7e6b5,#f1d28a);
+  color:#5b0a0a;
   cursor:pointer;
 }
 #intro.hide{opacity:0;pointer-events:none;transition:.6s}
 
-/* HEADER */
+/* ================= HEADER ================= */
 .site-header{border-bottom:1px solid rgba(0,0,0,.05)}
 .nav-menu{
   max-width:1200px;margin:auto;padding:16px;
@@ -50,43 +37,119 @@ body{
 }
 .nav-menu a{text-decoration:none;color:#5a4a3b}
 
-/* HERO */
-.hero{max-width:1400px;margin:40px auto 0;padding:0 16px;text-align:center}
-.hero-img{
-  width:100%;height:auto;object-fit:contain;
-  border-radius:16px;background:#000;
+/* ================= HERO ================= */
+.hero{
+  max-width:1400px;
+  margin:40px auto 0;
+  padding:0 16px;
 }
-.hero-text{margin-top:24px}
-.hero-title{font-family:"Playfair Display",serif;font-size:40px}
+.hero-media{position:relative}
+.hero-media img{
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  border-radius:16px;
+  background:#000;
+}
 
-/* SECTION */
-.section{max-width:1200px;margin:auto;padding:80px 16px;text-align:center}
+/* CAPTION TRÊN ẢNH */
+.hero-caption{
+  position:absolute;
+  left:50%;
+  top:20px;
+  transform:translateX(-50%);
+  text-align:center;
+  color:#fff;
+  background:rgba(0,0,0,.38);
+  backdrop-filter:blur(4px);
+  padding:14px 22px;
+  border-radius:14px;
+}
+.hero-caption h1{
+  font-family:"Playfair Display",serif;
+  font-size:34px;
+}
+.hero-caption h2{
+  font-family:"Playfair Display",serif;
+  font-size:22px;
+}
+.hero-caption p{
+  font-size:13px;
+  letter-spacing:2px;
+  margin-top:6px;
+}
+
+/* ================= SECTION ================= */
+.section{
+  max-width:1200px;
+  margin:auto;
+  padding:80px 16px;
+  text-align:center;
+}
 .section.alt{background:#fff}
 
+/* STORY */
+.story-text{
+  max-width:760px;
+  margin:0 auto 16px;
+  line-height:1.7;
+}
+
 /* INVITATION */
-.invitation-sides{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px}
-.invitation-box{background:#fff;padding:24px;border-radius:14px}
+.invitation-sides{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  margin-top:32px;
+}
+.invitation-box{
+  background:#fff;
+  padding:24px;
+  border-radius:14px;
+}
 
 /* GALLERY */
-.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.gallery img{width:100%;height:220px;object-fit:cover;border-radius:14px}
-
-/* RSVP */
-.rsvp-form{max-width:420px;margin:30px auto;display:flex;flex-direction:column;gap:12px}
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+}
+.gallery img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:14px;
+}
 
 /* MAP */
-.location-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
-.location-box iframe{width:100%;height:300px;border-radius:14px;border:0}
+.location-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:32px;
+}
+.location-box iframe{
+  width:100%;
+  height:300px;
+  border-radius:14px;
+  border:0;
+}
 
 /* MUSIC */
 #musicToggle{
-  position:fixed;bottom:20px;left:20px;
-  width:44px;height:44px;border-radius:50%;
-  border:none;background:#5a4a3b;color:#fff;
+  position:fixed;
+  bottom:20px;
+  left:20px;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  border:none;
+  background:#5a4a3b;
+  color:#fff;
 }
 
 /* MOBILE */
 @media(max-width:768px){
+  .hero-caption{top:14px}
   .invitation-sides,.gallery,.location-grid{grid-template-columns:1fr}
   .gallery img{height:200px}
 }
