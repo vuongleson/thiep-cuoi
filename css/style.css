@@ -262,3 +262,169 @@ body {
     height: 240px;
   }
 }
+/* =====================================================
+   INTRO – PHONG BÌ ĐỎ VÀNG (FINAL)
+   ===================================================== */
+
+#intro {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: radial-gradient(
+    circle at top,
+    #6b0f0f,
+    #2b0000
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Card phong bì */
+.intro-card {
+  width: 90%;
+  max-width: 380px;
+  background: linear-gradient(180deg, #5b0a0a, #2a0000);
+  border-radius: 28px;
+  padding: 48px 28px 42px;
+  text-align: center;
+  color: #f5e4b8;
+  box-shadow: 0 25px 70px rgba(0,0,0,.65);
+  position: relative;
+}
+
+/* Nắp phong bì */
+.intro-card::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(135deg, #7a1212, #4a0000);
+  clip-path: polygon(0 0, 50% 70%, 100% 0);
+  border-top-left-radius: 28px;
+  border-top-right-radius: 28px;
+}
+
+/* Tim */
+.intro-heart {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 16px;
+  background: #f5e4b8;
+  color: #5b0a0a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  box-shadow: 0 0 0 6px rgba(245,228,184,.25);
+}
+
+/* Tên */
+.intro-names {
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+/* Divider */
+.intro-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.intro-divider span:first-child,
+.intro-divider span:last-child {
+  width: 40px;
+  height: 1px;
+  background: rgba(245,228,184,.5);
+}
+
+/* Ngày */
+.intro-date {
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+/* Thân mời */
+.intro-label {
+  font-size: 14px;
+  opacity: .85;
+}
+
+/* Nút mở thiệp */
+#openInvitation {
+  margin-top: 26px;
+  padding: 14px 34px;
+  border-radius: 999px;
+  border: none;
+  background: #f5e4b8;
+  color: #5b0a0a;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,0,0,.4);
+  transition: transform .2s ease;
+}
+
+#openInvitation:hover {
+  transform: scale(1.05);
+}
+
+/* Fade out */
+#intro.hide {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .6s ease;
+}
+/* =====================================================
+   INTRO ENVELOPE OPEN ANIMATION
+   ===================================================== */
+
+.intro-card {
+  transform-style: preserve-3d;
+  perspective: 1200px;
+}
+
+/* Nắp phong bì */
+.intro-card::before {
+  transform-origin: top center;
+  transition: transform 0.9s ease;
+  backface-visibility: hidden;
+}
+
+/* Nội dung thiệp */
+.intro-card > * {
+  position: relative;
+  z-index: 2;
+  transition: transform 0.9s ease, opacity 0.6s ease;
+}
+
+/* Khi mở phong bì */
+#intro.open .intro-card::before {
+  transform: rotateX(-140deg);
+}
+
+/* Nội dung trượt lên nhẹ */
+#intro.open .intro-card > * {
+  transform: translateY(-12px);
+}
+
+/* Fade toàn intro */
+#intro.open {
+  animation: introFadeOut 0.8s ease forwards;
+  animation-delay: 0.6s;
+}
+
+@keyframes introFadeOut {
+  to {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+}
+
