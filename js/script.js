@@ -1,7 +1,22 @@
 const intro = document.getElementById("intro");
-const enterBtn = document.getElementById("enterWedding");
+const openBtn = document.getElementById("openInvitation");
 const music = document.getElementById("bgMusic");
-const musicToggle = document.getElementById("musicToggle");
+
+openBtn.addEventListener("click", () => {
+  // Kích hoạt animation phong bì mở
+  intro.classList.add("open");
+
+  // Phát nhạc (được phép vì có click)
+  if (music) {
+    music.play().catch(() => {});
+  }
+
+  // Xóa intro sau khi animation xong
+  setTimeout(() => {
+    intro.remove();
+  }, 1600);
+});
+
 
 let started = false;
 
@@ -49,3 +64,4 @@ musicToggle.addEventListener("click", () => {
     }
   }
 });
+
