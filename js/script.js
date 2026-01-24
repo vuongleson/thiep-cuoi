@@ -1,59 +1,37 @@
 const intro = document.getElementById("intro");
 const openBtn = document.getElementById("openInvitation");
 const music = document.getElementById("bgMusic");
-
-openBtn.addEventListener("click", () => {
-  // Kích hoạt animation phong bì mở
-  intro.classList.add("open");
-
-  // Phát nhạc (được phép vì có click)
-  if (music) {
-    music.play().catch(() => {});
-  }
-
-  // Xóa intro sau khi animation xong
-  setTimeout(() => {
-    intro.remove();
-  }, 1600);
-});
-
+const musicToggle = document.getElementById("musicToggle");
 
 let started = false;
 
-/* LUÔN HIỆN INTRO – KHÔNG NHỚ TRẠNG THÁI */
-intro.style.display = "flex";
+// khóa scroll khi còn intro
+document.body.style.overflow = "hidden";
 
-/* BẤM NÚT MỚI VÀO THIỆP */
-enterBtn.addEventListener("click", () => {
-  // Cuộn về đầu cho chắc
-  window.scrollTo({ top: 0, behavior: "instant" });
+openBtn.addEventListener("click", () => {
+  intro.classList.add("hide");
 
-  // Play nhạc (đúng luật iOS)
-  music
-    .play()
-    .then(() => {
+  // phát nhạc (được phép vì có click)
+  if (music) {
+    music.play().then(() => {
       started = true;
       musicToggle.textContent = "🔊";
-    })
-    .catch(() => {});
+    }).catch(() => {});
+  }
 
-  // Ẩn intro
-  intro.classList.add("hide");
+  // mở khóa trang & remove intro
   setTimeout(() => {
-    intro.style.display = "none";
+    intro.remove();
+    document.body.style.overflow = "";
   }, 600);
 });
 
-/* TOGGLE NHẠC */
 musicToggle.addEventListener("click", () => {
   if (!started) {
-    music
-      .play()
-      .then(() => {
-        started = true;
-        musicToggle.textContent = "🔊";
-      })
-      .catch(() => {});
+    music.play().then(() => {
+      started = true;
+      musicToggle.textContent = "🔊";
+    }).catch(() => {});
   } else {
     if (music.paused) {
       music.play();
@@ -64,4 +42,3 @@ musicToggle.addEventListener("click", () => {
     }
   }
 });
-
