@@ -120,3 +120,62 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.style.overflow = "";
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const intro = document.getElementById("intro");
+  const openBtn = document.getElementById("openInvitation");
+  const music = document.getElementById("bgMusic");
+  const musicToggle = document.getElementById("musicToggle");
+
+  let started = false;
+
+  /* ================= INTRO ================= */
+  if (intro && openBtn) {
+    // khóa scroll khi intro còn tồn tại
+    document.body.style.overflow = "hidden";
+
+    openBtn.addEventListener("click", () => {
+      // hiệu ứng ẩn
+      intro.classList.add("hide");
+
+      // phát nhạc (được phép vì có click)
+      if (music) {
+        music
+          .play()
+          .then(() => {
+            started = true;
+            if (musicToggle) musicToggle.textContent = "🔊";
+          })
+          .catch(() => {});
+      }
+
+      // REMOVE intro khỏi DOM (QUAN TRỌNG)
+      setTimeout(() => {
+        intro.remove();
+        document.body.style.overflow = ""; // mở lại scroll
+      }, 600);
+    });
+  }
+
+  /* ================= MUSIC TOGGLE ================= */
+  if (musicToggle && music) {
+    musicToggle.addEventListener("click", () => {
+      if (!started) {
+        music
+          .play()
+          .then(() => {
+            started = true;
+            musicToggle.textContent = "🔊";
+          })
+          .catch(() => {});
+      } else {
+        if (music.paused) {
+          music.play();
+          musicToggle.textContent = "🔊";
+        } else {
+          music.pause();
+          musicToggle.textContent = "🔇";
+        }
+      }
+    });
+  }
+});
