@@ -102,6 +102,41 @@
         <img src="assets/images/gallery/4.jpg" />
       </div>
     </section>
+    <!-- LỜI CHÚC -->
+    <section id="guestbook" class="section alt">
+      <h2>Lời Chúc Từ Bạn Bè & Người Thân</h2>
+
+      <div class="guestbook-list" id="guestbookList">
+        <p class="guestbook-empty">Chưa có lời chúc nào 💌</p>
+      </div>
+
+      <div class="guestbook-cta">
+        <button id="openWish">💬 Gửi lời chúc</button>
+      </div>
+    </section>
+
+    <!-- MODAL LỜI CHÚC -->
+    <div id="wishModal" class="wish-modal">
+      <div class="wish-box">
+        <button class="wish-close" id="closeWish">×</button>
+
+        <h2>Gửi lời chúc</h2>
+        <p class="wish-note">
+          Một lời chúc nhỏ sẽ làm ngày vui của chúng tôi thêm trọn vẹn 💕
+        </p>
+
+        <form id="wishForm">
+          <input type="text" id="wishName" placeholder="Tên của bạn" required />
+          <textarea
+            id="wishMessage"
+            placeholder="Lời chúc của bạn"
+            required
+          ></textarea>
+
+          <button type="submit" class="wish-submit">Gửi lời chúc</button>
+        </form>
+      </div>
+    </div>
 
     <!-- RSVP -->
     <section id="rsvp" class="section alt">
