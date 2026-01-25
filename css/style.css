@@ -1,15 +1,32 @@
+/* =====================================================
+   RESET & BASE
+   ===================================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  font-family: Montserrat, sans-serif;
+  font-family: "Montserrat", sans-serif;
   background: #f6f1e8;
   color: #4a3b2a;
+  line-height: 1.6;
 }
 
-/* ================= INTRO ================= */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* =====================================================
+   INTRO
+   ===================================================== */
 #intro {
   position: fixed;
   inset: 0;
@@ -19,40 +36,46 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 .intro-card {
   width: 92%;
   max-width: 560px;
-  background: linear-gradient(#5b0a0a, #2a0000);
-  border-radius: 32px;
   padding: 64px 40px;
   text-align: center;
+  background: linear-gradient(#5b0a0a, #2a0000);
+  border-radius: 32px;
   color: #f5e4b8;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.65);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
 }
+
 .intro-heart {
   width: 72px;
   height: 72px;
   margin: 0 auto 20px;
+  border-radius: 50%;
   background: #f5e4b8;
   color: #5b0a0a;
-  border-radius: 50%;
+  font-size: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 32px;
 }
+
 .intro-names {
   font-family: "Playfair Display", serif;
   font-size: 36px;
 }
+
 .intro-date {
   margin-top: 14px;
   font-size: 16px;
 }
+
 .intro-label {
   margin-top: 6px;
   font-size: 15px;
 }
+
 #openInvitation {
   margin-top: 32px;
   padding: 16px 44px;
@@ -61,18 +84,22 @@ body {
   background: linear-gradient(135deg, #f7e6b5, #f1d28a);
   color: #5b0a0a;
   font-size: 17px;
-  cursor: pointer;
 }
+
 #intro.hide {
   opacity: 0;
   pointer-events: none;
   transition: 0.6s;
 }
 
-/* ================= HEADER ================= */
+/* =====================================================
+   HEADER / NAV
+   ===================================================== */
 .site-header {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  background: #f6f1e8;
 }
+
 .nav-menu {
   max-width: 1200px;
   margin: auto;
@@ -82,47 +109,45 @@ body {
   gap: 24px;
   flex-wrap: wrap;
 }
+
 .nav-menu a {
   text-decoration: none;
   color: #5a4a3b;
+  font-size: 14px;
 }
 
-/* ================= HERO ================= */
+/* =====================================================
+   HERO – IMAGE CONTENT + CAPTION
+   ===================================================== */
 .hero {
   max-width: 1400px;
   margin: 40px auto 0;
   padding: 0 16px;
 }
+
 .hero-media {
   position: relative;
 }
+
 .hero-media img {
   width: 100%;
   height: auto;
-  object-fit: contain;
+  object-fit: contain; /* KHÔNG CẮT ẢNH */
   border-radius: 18px;
   background: #000;
 }
 
-/* ===== HERO CAPTION – DESKTOP FIRST ===== */
+/* Caption in trên ảnh – không nền */
 .hero-caption {
   position: absolute;
-  left: 50%;
   top: 32px;
+  left: 50%;
   transform: translateX(-50%);
   text-align: center;
   color: #fff;
-
-  /* không có nền – caption “in” trên ảnh */
-  background: none;
-  backdrop-filter: none;
-  padding: 0;
-
-  max-width: 90%;
   pointer-events: none;
 }
 
-/* tăng độ đọc chữ */
 .hero-caption h1,
 .hero-caption h2,
 .hero-caption p {
@@ -134,7 +159,6 @@ body {
 .hero-caption h1 {
   font-family: "Playfair Display", serif;
   font-size: 44px;
-  line-height: 1.2;
 }
 
 .hero-caption h2 {
@@ -149,64 +173,165 @@ body {
   margin-top: 8px;
 }
 
-/* ================= SECTION ================= */
+/* =====================================================
+   SECTION BASE
+   ===================================================== */
 .section {
   max-width: 1200px;
   margin: auto;
   padding: 80px 16px;
   text-align: center;
 }
+
 .section.alt {
   background: #fff;
 }
 
-/* STORY */
+.section h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* =====================================================
+   STORY
+   ===================================================== */
 .story-text {
   max-width: 760px;
   margin: 0 auto 16px;
   line-height: 1.8;
 }
 
-/* INVITATION */
+/* =====================================================
+   INVITATION
+   ===================================================== */
 .invitation-sides {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
   margin-top: 32px;
 }
+
 .invitation-box {
   background: #fff;
   padding: 28px;
   border-radius: 16px;
 }
 
-/* GALLERY */
+/* =====================================================
+   RSVP CTA
+   ===================================================== */
+.rsvp-cta {
+  margin-top: 32px;
+}
+
+.rsvp-cta button {
+  padding: 14px 38px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #f7e6b5, #f1d28a);
+  color: #5b0a0a;
+  font-size: 16px;
+}
+
+/* =====================================================
+   GALLERY
+   ===================================================== */
 .gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
 }
+
 .gallery img {
-  width: 100%;
   height: 240px;
   object-fit: cover;
   border-radius: 16px;
 }
 
-/* MAP */
+/* =====================================================
+   LOCATION
+   ===================================================== */
 .location-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 32px;
 }
-.location-box iframe {
+
+.location-grid iframe {
   width: 100%;
   height: 320px;
-  border-radius: 16px;
   border: 0;
+  border-radius: 16px;
 }
 
-/* MUSIC */
+/* =====================================================
+   MODAL (RSVP + GUESTBOOK)
+   ===================================================== */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9998;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-box {
+  width: 92%;
+  max-width: 420px;
+  background: #fff;
+  padding: 32px 24px;
+  border-radius: 20px;
+  position: relative;
+  text-align: center;
+}
+
+.modal-box h2 {
+  font-family: "Playfair Display", serif;
+  margin-bottom: 12px;
+}
+
+.modal-box input,
+.modal-box textarea,
+.modal-box select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.modal-box textarea {
+  resize: none;
+  height: 90px;
+}
+
+.modal-box button {
+  padding: 12px;
+  border-radius: 999px;
+  border: none;
+  background: #5b0a0a;
+  color: #fff;
+}
+
+.close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 26px;
+}
+
+/* =====================================================
+   MUSIC TOGGLE
+   ===================================================== */
 #musicToggle {
   position: fixed;
   bottom: 20px;
@@ -220,51 +345,33 @@ body {
 }
 
 /* =====================================================
-   MOBILE FIX – HERO / INTRO / GRID
+   MOBILE
    ===================================================== */
 @media (max-width: 768px) {
-  /* INTRO scale lại cho mobile */
   .intro-card {
-    padding: 36px 22px;
+    padding: 40px 22px;
   }
 
   .intro-names {
     font-size: 26px;
   }
 
-  #openInvitation {
-    padding: 14px 30px;
-    font-size: 15px;
-  }
-
-  /* HERO */
-  .hero {
-    margin-top: 24px;
-  }
-
-  /* CAPTION MOBILE – GỌN, KHÔNG ĐÈ ẢNH */
   .hero-caption {
-    top: 12px;
-    max-width: 88%;
+    top: 14px;
   }
 
   .hero-caption h1 {
     font-size: 22px;
-    line-height: 1.25;
   }
 
   .hero-caption h2 {
     font-size: 16px;
-    margin-top: 2px;
   }
 
   .hero-caption p {
     font-size: 11px;
-    letter-spacing: 1.5px;
-    margin-top: 4px;
   }
 
-  /* GRID */
   .invitation-sides,
   .gallery,
   .location-grid {
@@ -275,140 +382,7 @@ body {
     height: 200px;
   }
 
-  .location-box iframe {
+  .location-grid iframe {
     height: 240px;
   }
-}
-/* =====================================================
-   GUESTBOOK – LỜI CHÚC
-   ===================================================== */
-
-.guestbook-list {
-  max-width: 760px;
-  margin: 30px auto;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.guestbook-empty {
-  color: #999;
-  font-style: italic;
-}
-
-/* Mỗi lời chúc */
-.wish-item {
-  background: #fff;
-  padding: 18px 20px;
-  border-radius: 14px;
-  text-align: left;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
-}
-
-.wish-item strong {
-  display: block;
-  margin-bottom: 6px;
-  color: #5b0a0a;
-}
-
-/* CTA */
-.guestbook-cta {
-  text-align: center;
-  margin-top: 24px;
-}
-
-#openWish {
-  padding: 14px 38px;
-  border-radius: 999px;
-  border: none;
-  background: linear-gradient(135deg, #f7e6b5, #f1d28a);
-  color: #5b0a0a;
-  font-size: 16px;
-  cursor: pointer;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
-}
-
-/* =====================================================
-   WISH MODAL
-   ===================================================== */
-
-.wish-modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 9998;
-}
-
-.wish-modal.show {
-  display: flex;
-}
-
-.wish-box {
-  background: #fff;
-  width: 92%;
-  max-width: 420px;
-  border-radius: 20px;
-  padding: 32px 24px;
-  text-align: center;
-  position: relative;
-  animation: wishPop 0.35s ease;
-}
-
-@keyframes wishPop {
-  from {
-    transform: scale(0.9);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.wish-close {
-  position: absolute;
-  top: 14px;
-  right: 18px;
-  background: none;
-  border: none;
-  font-size: 26px;
-  cursor: pointer;
-}
-
-.wish-note {
-  font-size: 14px;
-  margin-bottom: 18px;
-  color: #666;
-}
-
-#wishForm {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-#wishForm input,
-#wishForm textarea {
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  font-family: inherit;
-}
-
-#wishForm textarea {
-  resize: none;
-  height: 90px;
-}
-
-.wish-submit {
-  margin-top: 10px;
-  padding: 12px;
-  border-radius: 999px;
-  border: none;
-  background: #5b0a0a;
-  color: #fff;
-  cursor: pointer;
 }
