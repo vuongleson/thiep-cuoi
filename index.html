@@ -1,150 +1,174 @@
 <!doctype html>
 <html lang="vi">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thiệp Cưới | Hoài Thương & Sơn</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thiệp Cưới | Hoài Thương & Sơn</title>
 
-  <link rel="stylesheet" href="css/style.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Montserrat:wght@300;400;500&display=swap"
-    rel="stylesheet"
-  />
-</head>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Montserrat:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
+    <!-- INTRO -->
+    <div id="intro">
+      <div class="intro-box">
+        <p>TRÂN TRỌNG KÍNH MỜI</p>
+        <h2>
+          Nguyễn Thị Hoài Thương <span>&</span><br />
+          Vương Lê Sơn
+        </h2>
+        <button id="enterWedding">MỞ THIỆP CƯỚI</button>
+      </div>
+    </div>
 
-<!-- INTRO -->
-<div id="intro">
-  <div class="intro-box">
-    <p>TRÂN TRỌNG KÍNH MỜI</p>
-    <h2>
-      Nguyễn Thị Hoài Thương <span>&</span><br />
-      Vương Lê Sơn
-    </h2>
-    <button id="enterWedding">MỞ THIỆP CƯỚI</button>
-  </div>
-</div>
+    <!-- HEADER -->
+    <header class="site-header">
+      <nav class="nav-menu">
+        <a href="#home">Trang chủ</a>
+        <a href="#invitation">Thiệp mời</a>
+        <a href="#story">Chuyện chúng tôi</a>
+        <a href="#gallery">Album</a>
+        <a href="#rsvp">RSVP</a>
+        <a href="#location">Địa điểm</a>
+      </nav>
+    </header>
 
-<!-- HEADER -->
-<header class="site-header">
-  <nav class="nav-menu">
-    <a href="#home">Trang chủ</a>
-    <a href="#invitation">Thiệp mời</a>
-    <a href="#story">Chuyện chúng tôi</a>
-    <a href="#gallery">Album</a>
-    <a href="#rsvp">RSVP</a>
-    <a href="#location">Địa điểm</a>
-  </nav>
-</header>
+    <!-- MUSIC -->
+    <audio id="bgMusic" loop playsinline>
+      <source src="assets/music/Like My Father.mp3" type="audio/mpeg" />
+    </audio>
 
-<!-- MUSIC -->
-<audio id="bgMusic" loop playsinline>
-  <source src="assets/music/Like My Father.mp3" type="audio/mpeg" />
-</audio>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <img src="assets/images/hero.jpg" alt="Save the Date" class="hero-img" />
 
-<!-- HERO -->
-<section id="home" class="hero">
-  <img src="assets/images/hero.jpg" alt="Save the Date" class="hero-img" />
+      <div class="hero-text">
+        <h1 class="hero-title">Save the Date</h1>
+        <p>Ngày chúng tôi về chung một nhà</p>
+        <h2 class="hero-names">Hoài Thương <span>&</span> Sơn</h2>
+        <p class="hero-date">14 · 02 · 2026</p>
+      </div>
+    </section>
 
-  <div class="hero-text">
-    <h1 class="hero-title">Save the Date</h1>
-    <p>Ngày chúng tôi về chung một nhà</p>
-    <h2 class="hero-names">Hoài Thương <span>&</span> Sơn</h2>
-    <p class="hero-date">14 · 02 · 2026</p>
-  </div>
-</section>
-
-<!-- THIỆP MỜI -->
-<section id="invitation" class="section">
-  <h2>Thiệp Mời</h2>
-  <p class="section-text">
-    Trân trọng kính mời Quý khách đến dự lễ thành hôn của chúng tôi.<br />
-    Sự hiện diện của Quý khách là niềm vinh hạnh cho gia đình hai bên.
-  </p>
-
-  <div class="invitation-sides">
-    <div class="invitation-box">
-      <h3>💐 Lễ cưới tại nhà gái</h3>
-      <p>
-        <strong>Nguyễn Thị Hoài Thương</strong><br />
-        📍 Quảng Bình<br />
-        🕘 (Giờ tổ chức)
+    <!-- THIỆP MỜI -->
+    <section id="invitation" class="section">
+      <h2>Thiệp Mời</h2>
+      <p class="section-text">
+        Trân trọng kính mời Quý khách đến dự lễ thành hôn của chúng tôi.<br />
+        Sự hiện diện của Quý khách là niềm vinh hạnh cho gia đình hai bên.
       </p>
-    </div>
 
-    <div class="invitation-box">
-      <h3>💍 Lễ cưới tại nhà trai</h3>
+      <div class="invitation-sides">
+        <div class="invitation-box">
+          <h3>💐 Lễ cưới tại nhà gái</h3>
+          <p>
+            <strong>Nguyễn Thị Hoài Thương</strong><br />
+            📍 Quảng Bình<br />
+            🕘 (Giờ tổ chức)
+          </p>
+        </div>
+
+        <div class="invitation-box">
+          <h3>💍 Lễ cưới tại nhà trai</h3>
+          <p>
+            <strong>Vương Lê Sơn</strong><br />
+            📍 Bình Định<br />
+            🕘 (Giờ tổ chức)
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section id="story" class="section alt">
+      <h2>Chuyện Chúng Tôi</h2>
       <p>
-        <strong>Vương Lê Sơn</strong><br />
-        📍 Bình Định<br />
-        🕘 (Giờ tổ chức)
+        Từ những ngày đầu gặp gỡ đến khi quyết định về chung một nhà, chúng tôi
+        đã cùng nhau trải qua nhiều khoảnh khắc đáng nhớ.
       </p>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- STORY -->
-<section id="story" class="section alt">
-  <h2>Chuyện Chúng Tôi</h2>
-  <p>
-    Từ những ngày đầu gặp gỡ đến khi quyết định về chung một nhà,
-    chúng tôi đã cùng nhau trải qua nhiều khoảnh khắc đáng nhớ.
-  </p>
-</section>
+    <!-- GALLERY -->
+    <section id="gallery" class="section">
+      <h2>Album Ảnh</h2>
+      <div class="gallery">
+        <img src="assets/images/gallery/1.jpg" />
+        <img src="assets/images/gallery/2.jpg" />
+        <img src="assets/images/gallery/3.jpg" />
+        <img src="assets/images/gallery/4.jpg" />
+      </div>
+    </section>
 
-<!-- GALLERY -->
-<section id="gallery" class="section">
-  <h2>Album Ảnh</h2>
-  <div class="gallery">
-    <img src="assets/images/gallery/1.jpg" />
-    <img src="assets/images/gallery/2.jpg" />
-    <img src="assets/images/gallery/3.jpg" />
-    <img src="assets/images/gallery/4.jpg" />
-  </div>
-</section>
-
-<!-- RSVP -->
-<section id="rsvp" class="section alt">
-  <h2>Xác Nhận Tham Dự</h2>
-  <form class="rsvp-form">
-    <input placeholder="Họ và tên" />
-    <select>
-      <option>Bạn sẽ tham dự?</option>
-      <option>Có</option>
-      <option>Không</option>
-    </select>
-    <button>Gửi xác nhận</button>
-  </form>
-</section>
-
-<!-- ĐỊA ĐIỂM -->
-<section id="location" class="section">
-  <h2>Địa Điểm Tổ Chức</h2>
-
-  <div class="location-grid">
-    <div class="location-box">
-      <h3>Nhà gái – Quảng Bình</h3>
-      <p><strong>Trường THCS Hiền Ninh</strong></p>
-      <iframe
-        src="https://www.google.com/maps?q=Trường+THCS+Hiền+Ninh+Quảng+Bình&output=embed"
-        loading="lazy">
-      </iframe>
+    <!-- NÚT XÁC NHẬN THAM DỰ -->
+    <div class="rsvp-cta">
+      <button id="openRSVP">💌 Xác nhận tham dự</button>
     </div>
 
-    <div class="location-box">
-      <h3>Nhà trai – Bình Định</h3>
-      <p><strong>Khách sạn Hải Âu – Quy Nhơn</strong></p>
-      <iframe
-        src="https://www.google.com/maps?q=Khách+sạn+Hải+Âu+Quy+Nhơn&output=embed"
-        loading="lazy">
-      </iframe>
+    <!-- MODAL RSVP -->
+    <div id="rsvpModal" class="rsvp-modal">
+      <div class="rsvp-box">
+        <button class="rsvp-close" id="closeRSVP">×</button>
+
+        <h2>Xác nhận tham dự</h2>
+        <p class="rsvp-note">
+          Vui lòng xác nhận để gia đình chúng tôi chuẩn bị chu đáo hơn 💕
+        </p>
+
+        <form id="rsvpForm">
+          <input type="text" placeholder="Họ và tên" required />
+
+          <select required>
+            <option value="">Bạn sẽ tham dự?</option>
+            <option>Có, tôi sẽ đến</option>
+            <option>Xin lỗi, tôi không tham dự được</option>
+          </select>
+
+          <select>
+            <option value="">Tham dự tại</option>
+            <option>Nhà gái – Quảng Bình</option>
+            <option>Nhà trai – Bình Định</option>
+          </select>
+
+          <textarea placeholder="Lời nhắn (nếu có)"></textarea>
+
+          <button type="submit" class="rsvp-submit">Gửi xác nhận</button>
+        </form>
+      </div>
     </div>
-  </div>
-</section>
 
-<button id="musicToggle">🔊</button>
+    <!-- ĐỊA ĐIỂM -->
+    <section id="location" class="section">
+      <h2>Địa Điểm Tổ Chức</h2>
 
-<script src="js/script.js"></script>
-</body>
+      <div class="location-grid">
+        <div class="location-box">
+          <h3>Nhà gái – Quảng Bình</h3>
+          <p><strong>Trường THCS Hiền Ninh</strong></p>
+          <iframe
+            src="https://www.google.com/maps?q=Trường+THCS+Hiền+Ninh+Quảng+Bình&output=embed"
+            loading="lazy"
+          >
+          </iframe>
+        </div>
+
+        <div class="location-box">
+          <h3>Nhà trai – Bình Định</h3>
+          <p><strong>Khách sạn Hải Âu – Quy Nhơn</strong></p>
+          <iframe
+            src="https://www.google.com/maps?q=Khách+sạn+Hải+Âu+Quy+Nhơn&output=embed"
+            loading="lazy"
+          >
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <button id="musicToggle">🔊</button>
+
+    <script src="js/script.js"></script>
+  </body>
 </html>
