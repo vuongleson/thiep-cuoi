@@ -1,44 +1,35 @@
 const intro = document.getElementById("intro");
-const enterBtn = document.getElementById("enterWedding");
+const openBtn = document.getElementById("openInvitation");
 const music = document.getElementById("bgMusic");
 const musicToggle = document.getElementById("musicToggle");
 
 let started = false;
 
-/* LUÔN HIỆN INTRO – KHÔNG NHỚ TRẠNG THÁI */
-intro.style.display = "flex";
+// khóa scroll khi còn intro
+document.body.style.overflow = "hidden";
 
-/* BẤM NÚT MỚI VÀO THIỆP */
-enterBtn.addEventListener("click", () => {
-  // Cuộn về đầu cho chắc
-  window.scrollTo({ top: 0, behavior: "instant" });
+openBtn.addEventListener("click", () => {
+  intro.classList.add("hide");
 
-  // Play nhạc (đúng luật iOS)
-  music
-    .play()
-    .then(() => {
+  if (music) {
+    music.play().then(() => {
       started = true;
       musicToggle.textContent = "🔊";
-    })
-    .catch(() => {});
+    }).catch(() => {});
+  }
 
-  // Ẩn intro
-  intro.classList.add("hide");
   setTimeout(() => {
-    intro.style.display = "none";
+    intro.remove();
+    document.body.style.overflow = "";
   }, 600);
 });
 
-/* TOGGLE NHẠC */
 musicToggle.addEventListener("click", () => {
   if (!started) {
-    music
-      .play()
-      .then(() => {
-        started = true;
-        musicToggle.textContent = "🔊";
-      })
-      .catch(() => {});
+    music.play().then(() => {
+      started = true;
+      musicToggle.textContent = "🔊";
+    }).catch(() => {});
   } else {
     if (music.paused) {
       music.play();
