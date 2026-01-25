@@ -49,3 +49,27 @@ musicToggle.addEventListener("click", () => {
     }
   }
 });
+// RSVP MODAL
+const openRSVP = document.getElementById("openRSVP");
+const closeRSVP = document.getElementById("closeRSVP");
+const rsvpModal = document.getElementById("rsvpModal");
+
+if (openRSVP && closeRSVP && rsvpModal) {
+  openRSVP.addEventListener("click", () => {
+    rsvpModal.classList.add("show");
+    document.body.style.overflow = "hidden";
+  });
+
+  closeRSVP.addEventListener("click", () => {
+    rsvpModal.classList.remove("show");
+    document.body.style.overflow = "";
+  });
+
+  // click ra ngoài để đóng
+  rsvpModal.addEventListener("click", (e) => {
+    if (e.target === rsvpModal) {
+      rsvpModal.classList.remove("show");
+      document.body.style.overflow = "";
+    }
+  });
+}
