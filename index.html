@@ -11,173 +11,109 @@
       rel="stylesheet"
     />
   </head>
-
   <body>
     <!-- INTRO -->
     <div id="intro">
-      <div class="intro-box">
-        <p>TRÂN TRỌNG KÍNH MỜI</p>
-        <h2>
-          Nguyễn Thị Hoài Thương <span>&</span><br />
-          Vương Lê Sơn
-        </h2>
-        <button id="enterWedding">MỞ THIỆP CƯỚI</button>
+      <div class="intro-card">
+        <div class="intro-heart">❤</div>
+        <h1 class="intro-names">Hoài Thương & Sơn</h1>
+        <p class="intro-date">14 tháng 02, 2026</p>
+        <p class="intro-label">Trân trọng kính mời</p>
+        <button id="openInvitation">✉️ Mở thiệp</button>
       </div>
     </div>
 
-    <!-- HEADER -->
     <header class="site-header">
       <nav class="nav-menu">
         <a href="#home">Trang chủ</a>
         <a href="#invitation">Thiệp mời</a>
         <a href="#story">Chuyện chúng tôi</a>
         <a href="#gallery">Album</a>
-        <a href="#rsvp">RSVP</a>
         <a href="#location">Địa điểm</a>
       </nav>
     </header>
 
-    <!-- MUSIC -->
     <audio id="bgMusic" loop playsinline>
       <source src="assets/music/Like My Father.mp3" type="audio/mpeg" />
     </audio>
 
     <!-- HERO -->
     <section id="home" class="hero">
-      <img src="assets/images/hero.jpg" alt="Save the Date" class="hero-img" />
-
-      <div class="hero-text">
-        <h1 class="hero-title">Save the Date</h1>
-        <p>Ngày chúng tôi về chung một nhà</p>
-        <h2 class="hero-names">Hoài Thương <span>&</span> Sơn</h2>
-        <p class="hero-date">14 · 02 · 2026</p>
+      <div class="hero-media">
+        <img src="assets/images/hero.jpg" alt="Hoài Thương & Sơn" />
+        <div class="hero-caption">
+          <h1>Save the Date</h1>
+          <h2>Hoài Thương & Sơn</h2>
+          <p>14 · 02 · 2026</p>
+        </div>
       </div>
     </section>
 
     <!-- THIỆP MỜI -->
     <section id="invitation" class="section">
       <h2>Thiệp Mời</h2>
-      <p class="section-text">
-        Trân trọng kính mời Quý khách đến dự lễ thành hôn của chúng tôi.<br />
-        Sự hiện diện của Quý khách là niềm vinh hạnh cho gia đình hai bên.
-      </p>
+      <p>Trân trọng kính mời Quý khách đến dự lễ thành hôn của chúng tôi.</p>
 
       <div class="invitation-sides">
-        <div class="invitation-box">
-          <h3>💐 Lễ cưới tại nhà gái</h3>
-          <p>
-            <strong>Nguyễn Thị Hoài Thương</strong><br />
-            📍 Quảng Bình<br />
-            🕘 (Giờ tổ chức)
-          </p>
-        </div>
+        <div class="invitation-box">💐 Nhà gái – Quảng Bình</div>
+        <div class="invitation-box">💍 Nhà trai – Bình Định</div>
+      </div>
 
-        <div class="invitation-box">
-          <h3>💍 Lễ cưới tại nhà trai</h3>
-          <p>
-            <strong>Vương Lê Sơn</strong><br />
-            📍 Bình Định<br />
-            🕘 (Giờ tổ chức)
-          </p>
-        </div>
+      <div class="rsvp-cta">
+        <button id="openRSVP">💌 Xác nhận tham dự</button>
       </div>
     </section>
 
-    <!-- STORY -->
+    <!-- CHUYỆN CHÚNG TÔI -->
     <section id="story" class="section alt">
       <h2>Chuyện Chúng Tôi</h2>
-      <p>
-        Từ những ngày đầu gặp gỡ đến khi quyết định về chung một nhà, chúng tôi
-        đã cùng nhau trải qua nhiều khoảnh khắc đáng nhớ.
+      <p class="story-text">
+        Từ những ngày đầu gặp gỡ, chúng tôi đã cùng nhau đi qua những khoảnh
+        khắc giản dị nhưng đầy yêu thương.
       </p>
     </section>
 
-    <!-- GALLERY -->
-    <section id="gallery" class="section">
-      <h2>Album Ảnh</h2>
-      <div class="gallery">
-        <img src="assets/images/gallery/1.jpg" />
-        <img src="assets/images/gallery/2.jpg" />
-        <img src="assets/images/gallery/3.jpg" />
-        <img src="assets/images/gallery/4.jpg" />
-      </div>
-    </section>
-    <!-- LỜI CHÚC -->
+    <!-- GUESTBOOK -->
     <section id="guestbook" class="section alt">
-      <h2>Lời Chúc Từ Bạn Bè & Người Thân</h2>
-
-      <div class="guestbook-list" id="guestbookList">
+      <h2>Lời Chúc</h2>
+      <div id="guestbookList">
         <p class="guestbook-empty">Chưa có lời chúc nào 💌</p>
       </div>
+      <button id="openWish">💬 Gửi lời chúc</button>
+    </section>
 
-      <div class="guestbook-cta">
-        <button id="openWish">💬 Gửi lời chúc</button>
+    <!-- LOCATION -->
+    <section id="location" class="section">
+      <h2>Địa Điểm</h2>
+      <div class="location-grid">
+        <iframe
+          src="https://www.google.com/maps?q=Quảng+Bình&output=embed"
+        ></iframe>
+        <iframe
+          src="https://www.google.com/maps?q=Bình+Định&output=embed"
+        ></iframe>
       </div>
     </section>
 
-    <!-- MODAL LỜI CHÚC -->
-    <div id="wishModal" class="wish-modal">
-      <div class="wish-box">
-        <button class="wish-close" id="closeWish">×</button>
-
-        <h2>Gửi lời chúc</h2>
-        <p class="wish-note">
-          Một lời chúc nhỏ sẽ làm ngày vui của chúng tôi thêm trọn vẹn 💕
-        </p>
-
-        <form id="wishForm">
-          <input type="text" id="wishName" placeholder="Tên của bạn" required />
-          <textarea
-            id="wishMessage"
-            placeholder="Lời chúc của bạn"
-            required
-          ></textarea>
-
-          <button type="submit" class="wish-submit">Gửi lời chúc</button>
-        </form>
+    <!-- RSVP MODAL -->
+    <div id="rsvpModal" class="modal">
+      <div class="modal-box">
+        <button class="close" id="closeRSVP">×</button>
+        <h2>Xác nhận tham dự</h2>
+        <input placeholder="Họ và tên" />
+        <button>Gửi</button>
       </div>
     </div>
 
-    <!-- RSVP -->
-    <section id="rsvp" class="section alt">
-      <h2>Xác Nhận Tham Dự</h2>
-      <form class="rsvp-form">
-        <input placeholder="Họ và tên" />
-        <select>
-          <option>Bạn sẽ tham dự?</option>
-          <option>Có</option>
-          <option>Không</option>
-        </select>
-        <button>Gửi xác nhận</button>
-      </form>
-    </section>
-
-    <!-- ĐỊA ĐIỂM -->
-    <section id="location" class="section">
-      <h2>Địa Điểm Tổ Chức</h2>
-
-      <div class="location-grid">
-        <div class="location-box">
-          <h3>Nhà gái – Quảng Bình</h3>
-          <p><strong>Trường THCS Hiền Ninh</strong></p>
-          <iframe
-            src="https://www.google.com/maps?q=Trường+THCS+Hiền+Ninh+Quảng+Bình&output=embed"
-            loading="lazy"
-          >
-          </iframe>
-        </div>
-
-        <div class="location-box">
-          <h3>Nhà trai – Bình Định</h3>
-          <p><strong>Khách sạn Hải Âu – Quy Nhơn</strong></p>
-          <iframe
-            src="https://www.google.com/maps?q=Khách+sạn+Hải+Âu+Quy+Nhơn&output=embed"
-            loading="lazy"
-          >
-          </iframe>
-        </div>
+    <!-- WISH MODAL -->
+    <div id="wishModal" class="modal">
+      <div class="modal-box">
+        <button class="close" id="closeWish">×</button>
+        <input id="wishName" placeholder="Tên của bạn" />
+        <textarea id="wishMessage" placeholder="Lời chúc"></textarea>
+        <button id="sendWish">Gửi</button>
       </div>
-    </section>
+    </div>
 
     <button id="musicToggle">🔊</button>
 
