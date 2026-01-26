@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Thiệp Cưới | Hoài Thương & Sơn</title>
+    <title>Thiệp cưới | Hoài Thương & Sơn</title>
 
     <link rel="stylesheet" href="css/style.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Montserrat:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -17,7 +17,7 @@
       <div class="intro-card">
         <div class="intro-heart">❤</div>
         <h1 class="intro-names">Hoài Thương & Sơn</h1>
-        <p class="intro-date">14 tháng 02, 2026</p>
+        <p class="intro-date">14 · 02 · 2026</p>
         <p class="intro-label">Trân trọng kính mời</p>
         <button id="openInvitation">✉️ Mở thiệp</button>
       </div>
@@ -29,7 +29,7 @@
         <a href="#invitation">Thiệp mời</a>
         <a href="#story">Chuyện chúng tôi</a>
         <a href="#gallery">Album</a>
-        <a href="#location">Địa điểm</a>
+        <a href="#guestbook">Lời chúc</a>
       </nav>
     </header>
 
@@ -49,10 +49,12 @@
       </div>
     </section>
 
-    <!-- THIỆP MỜI -->
+    <!-- COUNTDOWN -->
+    <div id="countdown" class="countdown"></div>
+
+    <!-- INVITATION -->
     <section id="invitation" class="section">
       <h2>Thiệp Mời</h2>
-      <p>Trân trọng kính mời Quý khách đến dự lễ thành hôn của chúng tôi.</p>
 
       <div class="invitation-sides">
         <div class="invitation-box">💐 Nhà gái – Quảng Bình</div>
@@ -62,14 +64,22 @@
       <div class="rsvp-cta">
         <button id="openRSVP">💌 Xác nhận tham dự</button>
       </div>
+
+      <a
+        class="add-calendar"
+        target="_blank"
+        href="https://www.google.com/calendar/render?action=TEMPLATE&text=Lễ+cưới+Hoài+Thương+%26+Sơn&dates=20260214T030000Z/20260214T080000Z&location=Việt+Nam"
+      >
+        ➕ Thêm vào Google Calendar
+      </a>
     </section>
 
-    <!-- CHUYỆN CHÚNG TÔI -->
+    <!-- STORY -->
     <section id="story" class="section alt">
       <h2>Chuyện Chúng Tôi</h2>
       <p class="story-text">
-        Từ những ngày đầu gặp gỡ, chúng tôi đã cùng nhau đi qua những khoảnh
-        khắc giản dị nhưng đầy yêu thương.
+        Từ những ngày đầu gặp gỡ đến khi quyết định về chung một nhà, chúng tôi
+        đã cùng nhau đi qua nhiều khoảnh khắc đáng nhớ.
       </p>
     </section>
 
@@ -82,26 +92,38 @@
       <button id="openWish">💬 Gửi lời chúc</button>
     </section>
 
-    <!-- LOCATION -->
-    <section id="location" class="section">
-      <h2>Địa Điểm</h2>
-      <div class="location-grid">
-        <iframe
-          src="https://www.google.com/maps?q=Quảng+Bình&output=embed"
-        ></iframe>
-        <iframe
-          src="https://www.google.com/maps?q=Bình+Định&output=embed"
-        ></iframe>
-      </div>
-    </section>
-
     <!-- RSVP MODAL -->
     <div id="rsvpModal" class="modal">
       <div class="modal-box">
         <button class="close" id="closeRSVP">×</button>
         <h2>Xác nhận tham dự</h2>
-        <input placeholder="Họ và tên" />
-        <button>Gửi</button>
+
+        <form id="rsvpForm">
+          <input id="rsvpName" placeholder="Tên của bạn" required />
+
+          <label
+            ><input type="radio" name="attend" value="Có" required /> Tôi sẽ
+            đến</label
+          >
+          <label
+            ><input type="radio" name="attend" value="Không" /> Không thể
+            đến</label
+          >
+          <label
+            ><input type="radio" name="attend" value="Chưa chắc" /> Chưa chắc
+            chắn</label
+          >
+
+          <input
+            id="rsvpGuests"
+            type="number"
+            min="1"
+            max="10"
+            placeholder="Số người tham dự"
+          />
+
+          <button type="submit">Gửi xác nhận</button>
+        </form>
       </div>
     </div>
 
@@ -109,9 +131,10 @@
     <div id="wishModal" class="modal">
       <div class="modal-box">
         <button class="close" id="closeWish">×</button>
+        <h2>Gửi lời chúc</h2>
         <input id="wishName" placeholder="Tên của bạn" />
         <textarea id="wishMessage" placeholder="Lời chúc"></textarea>
-        <button id="sendWish">Gửi</button>
+        <button id="sendWish">Gửi lời chúc</button>
       </div>
     </div>
 
