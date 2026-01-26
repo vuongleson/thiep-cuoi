@@ -1,127 +1,73 @@
+const GOOGLE_API_URL = "PASTE_URL_GOOGLE_APPS_SCRIPT";
+
 document.addEventListener("DOMContentLoaded", () => {
-  /* ================= INTRO + MUSIC ================= */
+  /* INTRO + MUSIC */
   const intro = document.getElementById("intro");
   const openInvitation = document.getElementById("openInvitation");
   const music = document.getElementById("bgMusic");
   const musicToggle = document.getElementById("musicToggle");
-
   let started = false;
 
   if (intro && openInvitation) {
-    // khóa scroll khi intro còn
     document.body.style.overflow = "hidden";
-
-    openInvitation.addEventListener("click", () => {
-      // ẩn intro
+    openInvitation.onclick = () => {
       intro.classList.add("hide");
-
-      // phát nhạc (được phép vì có click)
-      if (music) {
-        music
-          .play()
-          .then(() => {
-            started = true;
-            if (musicToggle) musicToggle.textContent = "🔊";
-          })
-          .catch(() => {});
-      }
-
-      // remove intro khỏi DOM
+      music?.play().catch(() => {});
       setTimeout(() => {
         intro.remove();
         document.body.style.overflow = "";
       }, 600);
-    });
+    };
   }
 
-  /* ================= MUSIC TOGGLE ================= */
-  if (musicToggle && music) {
-    musicToggle.addEventListener("click", () => {
-      if (!started) {
-        music
-          .play()
-          .then(() => {
-            started = true;
-            musicToggle.textContent = "🔊";
-          })
-          .catch(() => {});
-      } else {
-        if (music.paused) {
-          music.play();
-          musicToggle.textContent = "🔊";
-        } else {
-          music.pause();
-          musicToggle.textContent = "🔇";
-        }
-      }
+  musicToggle.onclick = () => {
+    if (music.paused) music.play();
+    else music.pause();
+  };
+
+  /* COUNTDOWN */
+  const target = new Date("2026-02-14T10:00:00").getTime();
+  setInterval(() => {
+    const d = target - new Date().getTime();
+    if (d <= 0) return;
+    document.getElementById("countdown").innerText =
+      `⏳ ${Math.floor(d / 86400000)} ngày`;
+  }, 1000);
+
+  /* RSVP */
+  openRSVP.onclick = () => rsvpModal.classList.add("show");
+  closeRSVP.onclick = () => rsvpModal.classList.remove("show");
+
+  rsvpForm.onsubmit = (e) => {
+    e.preventDefault();
+    fetch(GOOGLE_API_URL, {
+      method: "POST",
+      mode: "no-cors",
+      body: JSON.stringify({
+        type: "RSVP",
+        name: rsvpName.value,
+        attend: document.querySelector("input[name=attend]:checked").value,
+        guests: rsvpGuests.value || 0,
+      }),
     });
-  }
+    alert("Cảm ơn bạn đã xác nhận 💕");
+    rsvpModal.classList.remove("show");
+  };
 
-  /* ================= RSVP MODAL ================= */
-  const openRSVP = document.getElementById("openRSVP");
-  const closeRSVP = document.getElementById("closeRSVP");
-  const rsvpModal = document.getElementById("rsvpModal");
+  /* GUESTBOOK */
+  openWish.onclick = () => wishModal.classList.add("show");
+  closeWish.onclick = () => wishModal.classList.remove("show");
 
-  openRSVP?.addEventListener("click", () => {
-    rsvpModal?.classList.add("show");
-    document.body.style.overflow = "hidden";
-  });
-
-  closeRSVP?.addEventListener("click", () => {
-    rsvpModal?.classList.remove("show");
-    document.body.style.overflow = "";
-  });
-
-  rsvpModal?.addEventListener("click", (e) => {
-    if (e.target === rsvpModal) {
-      rsvpModal.classList.remove("show");
-      document.body.style.overflow = "";
-    }
-  });
-
-  /* ================= GUESTBOOK ================= */
-  const openWish = document.getElementById("openWish");
-  const closeWish = document.getElementById("closeWish");
-  const wishModal = document.getElementById("wishModal");
-  const sendWish = document.getElementById("sendWish");
-  const wishName = document.getElementById("wishName");
-  const wishMessage = document.getElementById("wishMessage");
-  const guestbookList = document.getElementById("guestbookList");
-
-  openWish?.addEventListener("click", () => {
-    wishModal?.classList.add("show");
-    document.body.style.overflow = "hidden";
-  });
-
-  closeWish?.addEventListener("click", () => {
-    wishModal?.classList.remove("show");
-    document.body.style.overflow = "";
-  });
-
-  wishModal?.addEventListener("click", (e) => {
-    if (e.target === wishModal) {
-      wishModal.classList.remove("show");
-      document.body.style.overflow = "";
-    }
-  });
-
-  sendWish?.addEventListener("click", () => {
-    const name = wishName?.value.trim();
-    const msg = wishMessage?.value.trim();
-    if (!name || !msg) return;
-
-    const empty = guestbookList?.querySelector(".guestbook-empty");
-    empty?.remove();
-
-    const item = document.createElement("div");
-    item.innerHTML = `<strong>${name}</strong><p>${msg}</p>`;
-    item.style.marginBottom = "12px";
-
-    guestbookList?.prepend(item);
-
-    wishName.value = "";
-    wishMessage.value = "";
+  sendWish.onclick = () => {
+    fetch(GOOGLE_API_URL, {
+      method: "POST",
+      mode: "no-cors",
+      body: JSON.stringify({
+        type: "WISH",
+        name: wishName.value,
+        message: wishMessage.value,
+      }),
+    });
     wishModal.classList.remove("show");
-    document.body.style.overflow = "";
-  });
+  };
 });
