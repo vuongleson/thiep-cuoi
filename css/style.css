@@ -404,3 +404,69 @@ p{
     height:240px;
   }
 }
+/* ================= RSVP CHAT STYLE ================= */
+
+.rsvp-chat h2 {
+  font-family: "Playfair Display", serif;
+  margin-bottom: 6px;
+}
+
+.rsvp-desc {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.rsvp-step {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.rsvp-step label {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.rsvp-step input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+}
+
+.rsvp-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rsvp-option {
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid #ddd;
+  background: #fafafa;
+  text-align: left;
+  font-size: 15px;
+}
+
+.rsvp-option.active {
+  border-color: #5b0a0a;
+  background: #fff5f0;
+}
+
+.rsvp-submit {
+  width: 100%;
+  padding: 14px;
+  border-radius: 999px;
+  border: none;
+  background: #5b0a0a;
+  color: #fff;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
