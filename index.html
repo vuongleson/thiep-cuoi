@@ -94,38 +94,51 @@
 
     <!-- RSVP MODAL -->
     <div id="rsvpModal" class="modal">
-      <div class="modal-box">
-        <button class="close" id="closeRSVP">×</button>
-        <h2>Xác nhận tham dự</h2>
+  <div class="modal-box rsvp-chat">
 
-        <form id="rsvpForm">
-          <input id="rsvpName" placeholder="Tên của bạn" required />
+    <button class="close" id="closeRSVP">×</button>
 
-          <label
-            ><input type="radio" name="attend" value="Có" required /> Tôi sẽ
-            đến</label
-          >
-          <label
-            ><input type="radio" name="attend" value="Không" /> Không thể
-            đến</label
-          >
-          <label
-            ><input type="radio" name="attend" value="Chưa chắc" /> Chưa chắc
-            chắn</label
-          >
+    <h2>Xác nhận tham dự</h2>
+    <p class="rsvp-desc">Vui lòng cho chúng tôi biết bạn có đến không 💕</p>
 
-          <input
-            id="rsvpGuests"
-            type="number"
-            min="1"
-            max="10"
-            placeholder="Số người tham dự"
-          />
+    <!-- STEP 1: NAME -->
+    <div class="rsvp-step">
+      <label>Tên của bạn</label>
+      <input id="rsvpName" placeholder="Nhập tên của bạn" />
+    </div>
 
-          <button type="submit">Gửi xác nhận</button>
-        </form>
+    <!-- STEP 2: ATTEND -->
+    <div class="rsvp-step">
+      <label>Bạn có đến không?</label>
+
+      <div class="rsvp-options">
+        <button type="button" class="rsvp-option" data-value="Có">
+          ✔ Tôi sẽ đến
+        </button>
+
+        <button type="button" class="rsvp-option" data-value="Không">
+          ✖ Rất tiếc, tôi không thể đến
+        </button>
+
+        <button type="button" class="rsvp-option" data-value="Chưa chắc">
+          ? Chưa chắc chắn
+        </button>
       </div>
     </div>
+
+    <!-- STEP 3: GUEST COUNT -->
+    <div class="rsvp-step hidden" id="guestStep">
+      <label>Số lượng người tham dự</label>
+      <input id="rsvpGuests" type="number" min="1" max="10" placeholder="Ví dụ: 2" />
+    </div>
+
+    <button id="submitRSVP" class="rsvp-submit">
+      Gửi xác nhận
+    </button>
+
+  </div>
+</div>
+
 
     <!-- WISH MODAL -->
     <div id="wishModal" class="modal">
@@ -143,3 +156,4 @@
     <script src="js/script.js"></script>
   </body>
 </html>
+
