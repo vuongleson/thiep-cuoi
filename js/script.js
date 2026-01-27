@@ -35,24 +35,55 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 1000);
 
   /* RSVP */
-  openRSVP.onclick = () => rsvpModal.classList.add("show");
-  closeRSVP.onclick = () => rsvpModal.classList.remove("show");
+ /* ================= RSVP CHAT LOGIC ================= */
+let attendValue = "";
 
-  rsvpForm.onsubmit = (e) => {
-    e.preventDefault();
-    fetch(GOOGLE_API_URL, {
-      method: "POST",
-      mode: "no-cors",
-      body: JSON.stringify({
-        type: "RSVP",
-        name: rsvpName.value,
-        attend: document.querySelector("input[name=attend]:checked").value,
-        guests: rsvpGuests.value || 0,
-      }),
-    });
-    alert("Cảm ơn bạn đã xác nhận 💕");
-    rsvpModal.classList.remove("show");
-  };
+document.querySelectorAll(".rsvp-option").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".rsvp-option").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    attendValue = btn.dataset.value;
+
+    // Hiện số người nếu "Có"
+    const guestStep = document.getElementById("guestStep");
+    if (attendValue === "Có") {
+      guestStep.classList.remove("hidden");
+    } else {
+      guestStep.classList.add("hidden");
+    }
+  });
+});
+
+document.getElementById("submitRSVP")?.addEventListener("click", () => {
+  const name = document.getElementById("rsvpName").value.trim();
+  const guests = document.getElementById("rsvpGuests")?.value || 0;
+
+  if (!name || !attendValue) {
+    alert("Vui lòng nhập tên và chọn trạng thái tham dự.");
+    return;
+  }
+
+  // Gửi Google Sheet
+  fetch(GOOGLE_API_URL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      type: "RSVP",
+      name,
+      attend: attendValue,
+      guests,
+      ua: navigator.userAgent
+    })
+  });
+
+  alert("Cảm ơn bạn đã xác nhận 💕");
+
+  document.getElementById("rsvpModal").classList.remove("show");
+  document.body.style.overflow = "";
+});
+
 
   /* GUESTBOOK */
   openWish.onclick = () => wishModal.classList.add("show");
@@ -71,3 +102,4 @@ document.addEventListener("DOMContentLoaded", () => {
     wishModal.classList.remove("show");
   };
 });
+
