@@ -160,3 +160,49 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 });
+/* ================= GUESTBOOK ================= */
+
+const openWish = document.getElementById("openWish");
+const closeWish = document.getElementById("closeWish");
+const wishModal = document.getElementById("wishModal");
+const submitWish = document.getElementById("submitWish");
+const guestbookList = document.getElementById("guestbookList");
+
+if(openWish && wishModal){
+  openWish.addEventListener("click", function(){
+    wishModal.classList.add("show");
+    document.body.style.overflow="hidden";
+  });
+}
+
+if(closeWish && wishModal){
+  closeWish.addEventListener("click", function(){
+    wishModal.classList.remove("show");
+    document.body.style.overflow="";
+  });
+}
+
+if(submitWish){
+  submitWish.addEventListener("click", function(){
+
+    const name = document.getElementById("wishName").value.trim();
+    const message = document.getElementById("wishMessage").value.trim();
+
+    if(!name || !message){
+      alert("Vui lòng nhập đầy đủ thông tin.");
+      return;
+    }
+
+    const empty = guestbookList.querySelector(".guestbook-empty");
+    if(empty) empty.remove();
+
+    const div = document.createElement("div");
+    div.className="wish-item";
+    div.innerHTML = "<strong>"+name+"</strong><p>"+message+"</p>";
+
+    guestbookList.prepend(div);
+
+    wishModal.classList.remove("show");
+    document.body.style.overflow="";
+  });
+}
