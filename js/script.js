@@ -54,27 +54,35 @@ document.addEventListener("DOMContentLoaded", function () {
      COUNTDOWN
   ===================================================== */
 
-  const countdownEl = document.getElementById("countdown");
-  if (countdownEl) {
-    const weddingDate = new Date("2026-02-14T10:00:00").getTime();
+  /* COUNTDOWN - THEO LỄ THÀNH HÔN NHÀ TRAI */
 
-    setInterval(function () {
-      const now = new Date().getTime();
-      const distance = weddingDate - now;
+const countdown = document.getElementById("countdown");
 
-      if (distance <= 0) {
-        countdownEl.innerText = "💍 Hôm nay là ngày cưới!";
-        return;
-      }
+if (countdown) {
+
+  // 17:00 ngày 14/03/2026
+  const target = new Date("2026-03-14T17:00:00").getTime();
+
+  setInterval(function () {
+
+    const now = new Date().getTime();
+    const distance = target - now;
+
+    if (distance > 0) {
 
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
       const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
       const minutes = Math.floor((distance / (1000 * 60)) % 60);
 
-      countdownEl.innerText =
-        "⏳ " + days + " ngày " + hours + " giờ " + minutes + " phút";
-    }, 1000);
-  }
+      countdown.innerText =
+        "⏳ Còn " + days + " ngày " + hours + " giờ " + minutes + " phút";
+
+    } else {
+      countdown.innerText = "💍 Hôm nay là ngày cưới!";
+    }
+
+  }, 1000);
+}
 
   /* =====================================================
      RSVP MODAL (FIX LỖI KHÔNG HIỆN)
@@ -233,4 +241,5 @@ if(submitWish){
     document.body.style.overflow="";
   });
 }
+
 
