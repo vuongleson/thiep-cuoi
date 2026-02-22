@@ -112,54 +112,81 @@ document.addEventListener("DOMContentLoaded", function () {
      RSVP CHAT LOGIC
   ===================================================== */
 
-  const guestStep = document.getElementById("guestStep");
-  const rsvpName = document.getElementById("rsvpName");
-  const rsvpGuests = document.getElementById("rsvpGuests");
-  const submitRSVP = document.getElementById("submitRSVP");
+  /* ================= RSVP ================= */
 
-  let attendValue = "";
+const openRSVP = document.getElementById("openRSVP");
+const closeRSVP = document.getElementById("closeRSVP");
+const rsvpModal = document.getElementById("rsvpModal");
+const guestStep = document.getElementById("guestStep");
+const submitRSVP = document.getElementById("submitRSVP");
+const rsvpName = document.getElementById("rsvpName");
+const rsvpGuests = document.getElementById("rsvpGuests");
 
-  const optionButtons = document.querySelectorAll(".rsvp-option");
+let attend = "";
 
-  optionButtons.forEach(function (btn) {
-    btn.addEventListener("click", function () {
-
-      optionButtons.forEach(function (b) {
-        b.classList.remove("active");
-      });
-
-      btn.classList.add("active");
-      attendValue = btn.getAttribute("data-value");
-
-      if (guestStep) {
-        if (attendValue === "Có") {
-          guestStep.classList.remove("hidden");
-        } else {
-          guestStep.classList.add("hidden");
-        }
-      }
-    });
+if (openRSVP && rsvpModal) {
+  openRSVP.addEventListener("click", function () {
+    rsvpModal.classList.add("show");
+    document.body.style.overflow = "hidden";
   });
+}
 
-  if (submitRSVP) {
-    submitRSVP.addEventListener("click", function () {
+if (closeRSVP && rsvpModal) {
+  closeRSVP.addEventListener("click", function () {
+    rsvpModal.classList.remove("show");
+    document.body.style.overflow = "";
+  });
+}
 
-      if (!rsvpName || !rsvpName.value.trim() || !attendValue) {
-        alert("Vui lòng nhập tên và chọn trạng thái tham dự.");
-        return;
-      }
+document.querySelectorAll(".rsvp-option").forEach(function (btn) {
+  btn.addEventListener("click", function () {
 
-      alert("Cảm ơn bạn đã xác nhận 💕");
+    document.querySelectorAll(".rsvp-option")
+      .forEach(b => b.classList.remove("active"));
 
-      if (rsvpModal) {
-        rsvpModal.classList.remove("show");
-      }
+    btn.classList.add("active");
 
-      document.body.style.overflow = "";
-    });
-  }
+    attend = btn.dataset.value;
 
+    if (attend === "Có") {
+      guestStep.classList.remove("hidden");
+    } else {
+      guestStep.classList.add("hidden");
+    }
+  });
 });
+
+if (submitRSVP) {
+  submitRSVP.addEventListener("click", function () {
+
+    if (!rsvpName.value.trim()) {
+      alert("Vui lòng nhập tên của bạn.");
+      return;
+    }
+
+    if (!attend) {
+      alert("Vui lòng chọn trạng thái tham dự.");
+      return;
+    }
+
+    let guests = 0;
+
+    if (attend === "Có") {
+      guests = parseInt(rsvpGuests.value) || 1;
+    }
+
+    console.log({
+      name: rsvpName.value,
+      attend: attend,
+      guests: guests
+    });
+
+    alert("Cảm ơn bạn đã xác nhận 💕");
+
+    rsvpModal.classList.remove("show");
+    document.body.style.overflow = "";
+  });
+}
 /* ================= GUESTBOOK ================= */
 
 const openWish = document.getElementById("openWish");
@@ -206,3 +233,4 @@ if(submitWish){
     document.body.style.overflow="";
   });
 }
+
