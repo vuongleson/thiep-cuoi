@@ -111,16 +111,34 @@
     <button class="close" id="closeRSVP">×</button>
     <h2>Xác nhận tham dự</h2>
 
+    <!-- TÊN -->
     <input id="rsvpName" placeholder="Tên của bạn">
 
+    <!-- TRẠNG THÁI -->
     <div class="rsvp-options">
-      <button type="button" class="rsvp-option" data-value="Có">✔ Tôi sẽ đến</button>
-      <button type="button" class="rsvp-option" data-value="Không">✖ Không thể đến</button>
-      <button type="button" class="rsvp-option" data-value="Chưa chắc">? Chưa chắc</button>
+      <button type="button" class="rsvp-option" data-value="Có">
+        ✔ Tôi sẽ đến
+      </button>
+
+      <button type="button" class="rsvp-option" data-value="Không">
+        ✖ Không thể đến
+      </button>
+
+      <button type="button" class="rsvp-option" data-value="Chưa chắc">
+        ? Chưa chắc
+      </button>
     </div>
 
+    <!-- SỐ LƯỢNG NGƯỜI -->
     <div id="guestStep" class="hidden">
-      <input id="rsvpGuests" type="number" min="1" placeholder="Số người tham dự">
+      <label>Số lượng người tham dự cùng bạn</label>
+      <input
+        id="rsvpGuests"
+        type="number"
+        min="1"
+        max="10"
+        value="1"
+      >
     </div>
 
     <button id="submitRSVP">Gửi xác nhận</button>
@@ -143,3 +161,4 @@
 <script src="/thiep-cuoi/js/script.js"></script>
 </body>
 </html>
+
