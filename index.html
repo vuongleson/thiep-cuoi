@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thiệp cưới | Thương & Sơn</title>
+  <title>Thiệp cưới | Nguyễn Thị Hoài Thương & Vương Lê Sơn</title>
 
-  <link rel="stylesheet" href="/thiep-cuoi/css/style.css">
+  <link rel="stylesheet" href="css/style.css">
+
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -13,10 +14,11 @@
 <!-- INTRO -->
 <div id="intro">
   <div class="intro-card">
-    <div class="intro-heart">❤</div>
-    <h1>Thương & Sơn</h1>
-    <p>14 · 03 · 2026</p>
-    <button id="openInvitation">✉️ Mở thiệp</button>
+    <h1>Nguyễn Thị Hoài Thương</h1>
+    <p>&</p>
+    <h1>Vương Lê Sơn</h1>
+    <p>Trân trọng kính mời</p>
+    <button id="openInvitation">💌 Mở thiệp</button>
   </div>
 </div>
 
@@ -24,24 +26,26 @@
   <nav class="nav-menu">
     <a href="#home">Trang chủ</a>
     <a href="#invitation">Thiệp mời</a>
-    <a href="#story">Chuyện chúng tôi</a>
     <a href="#location">Địa điểm</a>
     <a href="#guestbook">Lời chúc</a>
   </nav>
 </header>
 
 <audio id="bgMusic" loop playsinline>
-  <source src="/thiep-cuoi/assets/music/Like%20My%20Father.mp3" type="audio/mpeg">
+  <source src="assets/music/Like My Father.mp3" type="audio/mpeg">
 </audio>
 
 <!-- HERO -->
 <section id="home" class="hero">
   <div class="hero-media">
-    <img src="/thiep-cuoi/assets/images/hero.jpg" alt="Wedding">
+    <img src="assets/images/hero.jpg" alt="Wedding">
     <div class="hero-caption">
       <h1>Save the Date</h1>
-      <h2>Thương & Sơn</h2>
-      <p>14 · 03 · 2026</p>
+      <h2>Nguyễn Thị Hoài Thương & Vương Lê Sơn</h2>
+      <p>
+        11:00 - 04/03/2026 (Nhà Gái)<br>
+        17:00 - 14/03/2026 (Nhà Trai)
+      </p>
     </div>
   </div>
 </section>
@@ -55,125 +59,75 @@
   <div class="invitation-sides">
 
     <div class="invitation-box">
-      <h3>💐 Lễ Vu Quy (Nhà Gái)</h3>
-      <p>Thôn Xuân Dục 4</p>
-      <p>Xã Trường Ninh - Quảng Trị</p>
-      <p><strong>11:00 - Thứ Tư, 04/03/2026</strong></p>
+      <h3>💐 Lễ Vu Quy - Nhà Gái</h3>
+      <p>Thôn Xuân Dục 4 - Quảng Trị</p>
+      <p><strong>11:00 - 04/03/2026</strong></p>
     </div>
 
     <div class="invitation-box">
-      <h3>💍 Lễ Thành Hôn (Nhà Trai)</h3>
+      <h3>💍 Lễ Thành Hôn - Nhà Trai</h3>
       <p>Khách sạn Hải Âu - Quy Nhơn</p>
-      <p>Bình Định</p>
-      <p><strong>17:00 - Thứ Bảy, 14/03/2026</strong></p>
+      <p><strong>17:00 - 14/03/2026</strong></p>
     </div>
 
   </div>
 
-  <div class="rsvp-cta">
-    <button id="openRSVP">💌 Xác nhận tham dự</button>
-  </div>
-</section>
-
-<!-- STORY -->
-<section id="story" class="section alt">
-  <h2>Chuyện Chúng Tôi</h2>
-  <p>
-    Từ những ngày đầu gặp gỡ đến khi quyết định về chung một nhà,
-    chúng tôi đã cùng nhau đi qua nhiều khoảnh khắc đáng nhớ.
-  </p>
+  <button id="openRSVP" class="btn-main">Xác nhận tham dự</button>
 </section>
 
 <!-- LOCATION -->
-<section id="location" class="section">
+<section id="location" class="section alt">
   <h2>Địa Điểm Tổ Chức</h2>
 
   <div class="location-grid">
-
-    <div>
-      <h3>Nhà gái – Quảng Bình</h3>
-      <iframe
-        src="https://www.google.com/maps?q=Trường+THCS+Hiền+Ninh+Quảng+Bình&output=embed">
-      </iframe>
-    </div>
-
-    <div>
-      <h3>Nhà trai – Bình Định</h3>
-      <iframe
-        src="https://www.google.com/maps?q=Khách+sạn+Hải+Âu+Quy+Nhơn&output=embed">
-      </iframe>
-    </div>
-
+    <iframe src="https://www.google.com/maps?q=Trường+Ninh+Quảng+Trị&output=embed"></iframe>
+    <iframe src="https://www.google.com/maps?q=Khách+sạn+Hải+Âu+Quy+Nhơn&output=embed"></iframe>
   </div>
 </section>
 
 <!-- GUESTBOOK -->
-<section id="guestbook" class="section alt">
+<section id="guestbook" class="section">
   <h2>Lời Chúc</h2>
-
-  <div id="guestbookList">
-    <p class="guestbook-empty">Chưa có lời chúc nào 💌</p>
-  </div>
-
-  <button id="openWish">💬 Gửi lời chúc</button>
+  <div id="guestbookList"></div>
+  <button id="openWish" class="btn-main">Gửi lời chúc</button>
 </section>
 
 <!-- RSVP MODAL -->
 <div id="rsvpModal" class="modal">
   <div class="modal-box">
-    <button class="close" id="closeRSVP">×</button>
+    <button id="closeRSVP" class="close">×</button>
     <h2>Xác nhận tham dự</h2>
 
-    <!-- TÊN -->
     <input id="rsvpName" placeholder="Tên của bạn">
 
-    <!-- TRẠNG THÁI -->
     <div class="rsvp-options">
-      <button type="button" class="rsvp-option" data-value="Có">
-        ✔ Tôi sẽ đến
-      </button>
-
-      <button type="button" class="rsvp-option" data-value="Không">
-        ✖ Không thể đến
-      </button>
-
-      <button type="button" class="rsvp-option" data-value="Chưa chắc">
-        ? Chưa chắc
-      </button>
+      <button type="button" class="rsvp-option" data-value="Có">✔ Tôi sẽ đến</button>
+      <button type="button" class="rsvp-option" data-value="Không">✖ Không thể đến</button>
+      <button type="button" class="rsvp-option" data-value="Chưa chắc">? Chưa chắc</button>
     </div>
 
-    <!-- SỐ LƯỢNG NGƯỜI -->
     <div id="guestStep" class="hidden">
-      <label>Số lượng người tham dự cùng bạn</label>
-      <input
-        id="rsvpGuests"
-        type="number"
-        min="1"
-        max="10"
-        value="1"
-      >
+      <label>Số lượng người tham dự</label>
+      <input id="rsvpGuests" type="number" min="1" value="1">
     </div>
 
-    <button id="submitRSVP">Gửi xác nhận</button>
+    <button id="submitRSVP" class="btn-main">Gửi</button>
   </div>
 </div>
 
 <!-- WISH MODAL -->
 <div id="wishModal" class="modal">
   <div class="modal-box">
-    <button class="close" id="closeWish">×</button>
+    <button id="closeWish" class="close">×</button>
     <h2>Gửi lời chúc</h2>
     <input id="wishName" placeholder="Tên của bạn">
     <textarea id="wishMessage" placeholder="Lời chúc"></textarea>
-    <button id="submitWish">Gửi</button>
+    <button id="submitWish" class="btn-main">Gửi</button>
   </div>
 </div>
 
 <button id="musicToggle">🔊</button>
 
-<script src="/thiep-cuoi/js/script.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
-
-
-
