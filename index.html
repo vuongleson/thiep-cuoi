@@ -6,24 +6,22 @@
   <title>Thiệp cưới | Nguyễn Thị Hoài Thương & Vương Lê Sơn</title>
 
   <link rel="stylesheet" href="css/style.css">
-
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <!-- INTRO -->
 <div id="intro">
-  <div class="intro-card">
+  <div class="intro-box">
     <h1>Nguyễn Thị Hoài Thương</h1>
     <p>&</p>
     <h1>Vương Lê Sơn</h1>
-    <p>Trân trọng kính mời</p>
     <button id="openInvitation">💌 Mở thiệp</button>
   </div>
 </div>
 
 <header class="site-header">
-  <nav class="nav-menu">
+  <nav>
     <a href="#home">Trang chủ</a>
     <a href="#invitation">Thiệp mời</a>
     <a href="#location">Địa điểm</a>
@@ -31,102 +29,88 @@
   </nav>
 </header>
 
-<audio id="bgMusic" loop playsinline>
+<audio id="bgMusic" loop>
   <source src="assets/music/Like My Father.mp3" type="audio/mpeg">
 </audio>
 
-<!-- HERO -->
 <section id="home" class="hero">
-  <div class="hero-media">
-    <img src="assets/images/hero.jpg" alt="Wedding">
-    <div class="hero-caption">
-      <h1>Save the Date</h1>
-      <h2>Nguyễn Thị Hoài Thương & Vương Lê Sơn</h2>
-      <p>
-        11:00 - 04/03/2026 (Nhà Gái)<br>
-        17:00 - 14/03/2026 (Nhà Trai)
-      </p>
-    </div>
+  <img src="assets/images/hero.jpg" alt="Wedding">
+  <div class="hero-text">
+    <h2>Save the Date</h2>
+    <p>
+      11:00 - 04/03/2026 (Nhà Gái)<br>
+      17:00 - 14/03/2026 (Nhà Trai)
+    </p>
   </div>
 </section>
 
 <div id="countdown" class="countdown"></div>
 
-<!-- INVITATION -->
 <section id="invitation" class="section">
   <h2>Thiệp Mời</h2>
 
-  <div class="invitation-sides">
-
-    <div class="invitation-box">
-      <h3>💐 Lễ Vu Quy - Nhà Gái</h3>
-      <p>Thôn Xuân Dục 4 - Quảng Trị</p>
-      <p><strong>11:00 - 04/03/2026</strong></p>
-    </div>
-
-    <div class="invitation-box">
-      <h3>💍 Lễ Thành Hôn - Nhà Trai</h3>
-      <p>Khách sạn Hải Âu - Quy Nhơn</p>
-      <p><strong>17:00 - 14/03/2026</strong></p>
-    </div>
-
+  <div class="card">
+    <h3>💐 Lễ Vu Quy</h3>
+    <p>11:00 - 04/03/2026</p>
+    <p>Thôn Xuân Dục 4 - Quảng Trị</p>
   </div>
 
-  <button id="openRSVP" class="btn-main">Xác nhận tham dự</button>
+  <div class="card">
+    <h3>💍 Lễ Thành Hôn</h3>
+    <p>17:00 - 14/03/2026</p>
+    <p>Khách sạn Hải Âu - Quy Nhơn</p>
+  </div>
+
+  <button id="openRSVP" class="btn">Xác nhận tham dự</button>
 </section>
 
-<!-- LOCATION -->
 <section id="location" class="section alt">
-  <h2>Địa Điểm Tổ Chức</h2>
-
-  <div class="location-grid">
+  <h2>Địa điểm</h2>
+  <div class="map-grid">
     <iframe src="https://www.google.com/maps?q=Trường+Ninh+Quảng+Trị&output=embed"></iframe>
     <iframe src="https://www.google.com/maps?q=Khách+sạn+Hải+Âu+Quy+Nhơn&output=embed"></iframe>
   </div>
 </section>
 
-<!-- GUESTBOOK -->
 <section id="guestbook" class="section">
-  <h2>Lời Chúc</h2>
+  <h2>Lời chúc</h2>
   <div id="guestbookList"></div>
-  <button id="openWish" class="btn-main">Gửi lời chúc</button>
+  <button id="openWish" class="btn">Gửi lời chúc</button>
 </section>
 
 <!-- RSVP MODAL -->
 <div id="rsvpModal" class="modal">
-  <div class="modal-box">
+  <div class="modal-content">
     <button id="closeRSVP" class="close">×</button>
-    <h2>Xác nhận tham dự</h2>
+    <h3>Xác nhận tham dự</h3>
 
     <input id="rsvpName" placeholder="Tên của bạn">
 
-    <div class="rsvp-options">
-      <button type="button" class="rsvp-option" data-value="Có">✔ Tôi sẽ đến</button>
-      <button type="button" class="rsvp-option" data-value="Không">✖ Không thể đến</button>
-      <button type="button" class="rsvp-option" data-value="Chưa chắc">? Chưa chắc</button>
+    <div class="options">
+      <button class="rsvp-option" data-value="Có">Tôi sẽ đến</button>
+      <button class="rsvp-option" data-value="Không">Không thể đến</button>
+      <button class="rsvp-option" data-value="Chưa chắc">Chưa chắc</button>
     </div>
 
-    <div id="guestStep" class="hidden">
+    <div id="guestField" class="hidden">
       <label>Số lượng người tham dự</label>
       <input id="rsvpGuests" type="number" min="1" value="1">
     </div>
 
-    <button id="submitRSVP" class="btn-main">Gửi</button>
+    <button id="submitRSVP" class="btn">Gửi</button>
   </div>
 </div>
 
 <!-- WISH MODAL -->
 <div id="wishModal" class="modal">
-  <div class="modal-box">
+  <div class="modal-content">
     <button id="closeWish" class="close">×</button>
-    <h2>Gửi lời chúc</h2>
+    <h3>Gửi lời chúc</h3>
     <input id="wishName" placeholder="Tên của bạn">
     <textarea id="wishMessage" placeholder="Lời chúc"></textarea>
-    <button id="submitWish" class="btn-main">Gửi</button>
+    <button id="submitWish" class="btn">Gửi</button>
   </div>
 </div>
-
-<button id="musicToggle">🔊</button>
 
 <script src="js/script.js"></script>
 </body>
