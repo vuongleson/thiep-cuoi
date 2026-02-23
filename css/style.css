@@ -1,525 +1,78 @@
-/* =====================================================
-   RESET & ROOT
-   ===================================================== */
-:root{
-  --bg-main:#f6f1e8;
-  --bg-white:#ffffff;
-  --text-main:#4a3b2a;
-  --text-muted:#7a6a58;
-  --accent:#5b0a0a;
-  --gold:#f1d28a;
-  --gold-soft:#f7e6b5;
-  --radius-lg:24px;
-  --radius-md:16px;
-  --radius-sm:10px;
-  --shadow-soft:0 8px 24px rgba(0,0,0,.08);
-  --shadow-deep:0 24px 64px rgba(0,0,0,.18);
-}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Montserrat,sans-serif;background:#f6f1e8;color:#4a3b2a}
+img{max-width:100%;display:block}
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-body{
-  font-family:"Montserrat",sans-serif;
-  background:var(--bg-main);
-  color:var(--text-main);
-  line-height:1.7;
-  -webkit-font-smoothing:antialiased;
-}
-
-img{
-  max-width:100%;
-  display:block;
-}
-
-/* =====================================================
-   TYPOGRAPHY
-   ===================================================== */
-h1,h2,h3{
-  font-family:"Playfair Display",serif;
-  font-weight:500;
-}
-
-h1{font-size:44px;}
-h2{font-size:30px;}
-h3{font-size:22px;}
-
-p{
-  font-size:15px;
-  color:var(--text-muted);
-}
-
-/* =====================================================
-   INTRO (PHONG BÌ)
-   ===================================================== */
+/* INTRO */
 #intro{
-  position:fixed;
-  inset:0;
-  z-index:9999;
-  background:radial-gradient(circle at top,#6b0f0f,#2b0000);
-  display:flex;
-  align-items:center;
-  justify-content:center;
+position:fixed;inset:0;z-index:9999;
+background:linear-gradient(#7b0000,#300000);
+display:flex;align-items:center;justify-content:center;
 }
+#intro.hide{opacity:0;pointer-events:none;transition:.6s}
+.intro-card{color:#fff;text-align:center}
+.intro-card button{margin-top:20px;padding:12px 24px;border:none;border-radius:30px;background:#fff;color:#7b0000;font-weight:bold}
 
-#intro.hide{
-  opacity:0;
-  pointer-events:none;
-  transition:.6s;
-}
-
-.intro-card{
-  width:92%;
-  max-width:560px;
-  padding:70px 44px;
-  background:linear-gradient(#5b0a0a,#2a0000);
-  border-radius:36px;
-  text-align:center;
-  color:var(--gold-soft);
-  box-shadow:var(--shadow-deep);
-}
-
-.intro-heart{
-  width:76px;
-  height:76px;
-  margin:0 auto 22px;
-  border-radius:50%;
-  background:var(--gold-soft);
-  color:var(--accent);
-  font-size:34px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.intro-names{
-  font-size:38px;
-  margin-bottom:6px;
-}
-
-.intro-date{
-  font-size:16px;
-  letter-spacing:1px;
-}
-
-.intro-label{
-  font-size:15px;
-  margin-top:4px;
-}
-
-#openInvitation{
-  margin-top:36px;
-  padding:16px 46px;
-  border:none;
-  border-radius:999px;
-  background:linear-gradient(135deg,var(--gold-soft),var(--gold));
-  color:var(--accent);
-  font-size:17px;
-}
-
-/* =====================================================
-   HEADER
-   ===================================================== */
-.site-header{
-  background:var(--bg-main);
-  border-bottom:1px solid rgba(0,0,0,.06);
-}
-
-.nav-menu{
-  max-width:1200px;
-  margin:auto;
-  padding:18px 16px;
-  display:flex;
-  justify-content:center;
-  gap:28px;
-  flex-wrap:wrap;
-}
-
-.nav-menu a{
-  text-decoration:none;
-  font-size:14px;
-  color:var(--text-main);
-}
-
-/* =====================================================
-   HERO (ẢNH + CAPTION)
-   ===================================================== */
-.hero{
-  max-width:1400px;
-  margin:50px auto 0;
-  padding:0 16px;
-}
-
-.hero-media{
-  position:relative;
-}
-
-.hero-media img{
-  width:100%;
-  height:auto;
-  object-fit:contain;
-  border-radius:var(--radius-lg);
-  background:#000;
-}
-
+/* HERO */
+.hero{max-width:1200px;margin:40px auto;padding:0 16px}
+.hero-media{position:relative}
 .hero-caption{
-  position:absolute;
-  top:34px;
-  left:50%;
-  transform:translateX(-50%);
-  text-align:center;
-  color:#fff;
+position:absolute;top:20px;left:50%;
+transform:translateX(-50%);
+color:#fff;text-align:center;
+text-shadow:0 2px 12px rgba(0,0,0,.7);
 }
 
-.hero-caption h1,
-.hero-caption h2,
-.hero-caption p{
-  text-shadow:
-    0 2px 6px rgba(0,0,0,.65),
-    0 10px 28px rgba(0,0,0,.45);
-}
+/* SECTION */
+.section{text-align:center;padding:80px 16px}
+.section.alt{background:#fff}
 
-.hero-caption h1{font-size:46px;}
-.hero-caption h2{font-size:26px;margin-top:4px;}
-.hero-caption p{
-  font-size:15px;
-  letter-spacing:2px;
-  margin-top:8px;
-}
-
-/* =====================================================
-   COUNTDOWN
-   ===================================================== */
-.countdown{
-  text-align:center;
-  margin-top:26px;
-  font-size:18px;
-  letter-spacing:1px;
-}
-
-/* =====================================================
-   SECTION BASE
-   ===================================================== */
-.section{
-  max-width:1200px;
-  margin:auto;
-  padding:90px 16px;
-  text-align:center;
-}
-
-.section.alt{
-  background:var(--bg-white);
-}
-
-.section h2{
-  margin-bottom:24px;
-}
-
-/* =====================================================
-   STORY
-   ===================================================== */
-.story-text{
-  max-width:760px;
-  margin:auto;
-  font-size:16px;
-  line-height:1.9;
-}
-
-/* =====================================================
-   INVITATION
-   ===================================================== */
 .invitation-sides{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:32px;
-  margin-top:40px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;margin:30px 0;
 }
-
 .invitation-box{
-  background:var(--bg-white);
-  padding:32px;
-  border-radius:var(--radius-md);
-  box-shadow:var(--shadow-soft);
+background:#fff;padding:24px;border-radius:14px;
+box-shadow:0 6px 20px rgba(0,0,0,.05);
 }
 
-/* =====================================================
-   RSVP CTA
-   ===================================================== */
-.rsvp-cta{
-  margin-top:36px;
-}
-
-.rsvp-cta button{
-  padding:14px 40px;
-  border:none;
-  border-radius:999px;
-  background:linear-gradient(135deg,var(--gold-soft),var(--gold));
-  color:var(--accent);
-  font-size:16px;
-}
-
-/* =====================================================
-   GALLERY
-   ===================================================== */
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:18px;
-}
-
-.gallery img{
-  height:260px;
-  object-fit:cover;
-  border-radius:var(--radius-md);
-  box-shadow:var(--shadow-soft);
-}
-
-/* =====================================================
-   LOCATION
-   ===================================================== */
+/* MAP */
 .location-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:36px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+iframe{
+width:100%;height:300px;border:0;border-radius:12px;
 }
 
-.location-grid iframe{
-  width:100%;
-  height:320px;
-  border:0;
-  border-radius:var(--radius-md);
+/* BUTTON */
+.btn-main{
+padding:12px 28px;border:none;border-radius:30px;
+background:#7b0000;color:#fff;cursor:pointer;
 }
 
-/* =====================================================
-   MODAL (RSVP + GUESTBOOK)
-   ===================================================== */
+/* MODAL */
 .modal{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.55);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:9998;
+position:fixed;inset:0;
+background:rgba(0,0,0,.6);
+display:none;align-items:center;justify-content:center;
 }
-
-.modal.show{display:flex;}
-
+.modal.show{display:flex}
 .modal-box{
-  width:92%;
-  max-width:440px;
-  background:var(--bg-white);
-  padding:36px 26px;
-  border-radius:var(--radius-lg);
-  position:relative;
-  text-align:center;
+background:#fff;padding:30px;border-radius:20px;
+width:92%;max-width:420px;position:relative;
 }
-
-.modal-box h2{
-  margin-bottom:14px;
-}
-
-.modal-box input,
-.modal-box textarea{
-  width:100%;
-  padding:12px;
-  border-radius:var(--radius-sm);
-  border:1px solid #ccc;
-  margin-bottom:14px;
-}
-
-.modal-box textarea{
-  resize:none;
-  height:90px;
-}
-
-.modal-box button{
-  padding:12px;
-  border:none;
-  border-radius:999px;
-  background:var(--accent);
-  color:#fff;
-}
-
 .close{
-  position:absolute;
-  top:14px;
-  right:18px;
-  border:none;
-  background:none;
-  font-size:26px;
+position:absolute;top:10px;right:15px;
+background:none;border:none;font-size:22px;
 }
 
-/* =====================================================
-   MUSIC TOGGLE
-   ===================================================== */
-#musicToggle{
-  position:fixed;
-  bottom:20px;
-  left:20px;
-  width:46px;
-  height:46px;
-  border-radius:50%;
-  border:none;
-  background:var(--text-main);
-  color:#fff;
-}
-
-/* =====================================================
-   MOBILE
-   ===================================================== */
-@media(max-width:768px){
-
-  h1{font-size:28px;}
-  h2{font-size:22px;}
-
-  .intro-card{
-    padding:44px 24px;
-  }
-
-  .intro-names{font-size:28px;}
-
-  .hero-caption{
-    top:14px;
-  }
-
-  .hero-caption h1{font-size:22px;}
-  .hero-caption h2{font-size:16px;}
-  .hero-caption p{font-size:11px;}
-
-  .invitation-sides,
-  .gallery,
-  .location-grid{
-    grid-template-columns:1fr;
-  }
-
-  .gallery img{
-    height:200px;
-  }
-
-  .location-grid iframe{
-    height:240px;
-  }
-}
-/* ================= RSVP CHAT STYLE ================= */
-
-.rsvp-chat h2 {
-  font-family: "Playfair Display", serif;
-  margin-bottom: 6px;
-}
-
-.rsvp-desc {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 20px;
-}
-
-.rsvp-step {
-  text-align: left;
-  margin-bottom: 20px;
-}
-
-.rsvp-step label {
-  font-weight: 500;
-  display: block;
-  margin-bottom: 8px;
-}
-
-.rsvp-step input {
-  width: 100%;
-  padding: 12px;
-  border-radius: 12px;
-  border: 1px solid #ccc;
-}
-
-.rsvp-options {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.rsvp-option {
-  padding: 14px;
-  border-radius: 14px;
-  border: 1px solid #ddd;
-  background: #fafafa;
-  text-align: left;
-  font-size: 15px;
-}
-
-.rsvp-option.active {
-  border-color: #5b0a0a;
-  background: #fff5f0;
-}
-
-.rsvp-submit {
-  width: 100%;
-  padding: 14px;
-  border-radius: 999px;
-  border: none;
-  background: #5b0a0a;
-  color: #fff;
-  font-size: 16px;
-  margin-top: 10px;
-}
-
-.hidden {
-  display: none;
-}
-/* LOCATION */
-.location-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:32px;
-  margin-top:30px;
-}
-.location-grid iframe{
-  width:100%;
-  height:300px;
-  border:0;
-  border-radius:16px;
-}
-
-/* GUESTBOOK */
-#guestbookList{
-  max-width:600px;
-  margin:20px auto;
-  text-align:left;
-}
-.wish-item{
-  background:#fff;
-  padding:14px;
-  border-radius:12px;
-  margin-bottom:10px;
-  box-shadow:0 4px 12px rgba(0,0,0,.05);
-}
+.rsvp-options{display:flex;flex-direction:column;gap:10px;margin:15px 0}
+.rsvp-option{padding:12px;border-radius:10px;border:1px solid #ccc;background:#fafafa}
+.rsvp-option.active{border-color:#7b0000;background:#fff0f0}
+.hidden{display:none}
 
 @media(max-width:768px){
-  .location-grid{
-    grid-template-columns:1fr;
-  }
+.invitation-sides,.location-grid{grid-template-columns:1fr}
 }
-#guestStep {
-  margin-top: 16px;
-}
-
-#guestStep label {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: 500;
-}
-
-#guestStep input {
-  width: 100%;
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-}
-
-.hidden {
-  display: none;
-}
-
